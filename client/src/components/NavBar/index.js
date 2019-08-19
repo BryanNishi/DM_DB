@@ -46,7 +46,7 @@ class NavBar extends Component {
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link" href="/sheet">Character Sheets</a>
+                                <a className="nav-link" href="/character">Character Sheets</a>
                             </li>
 
                             <li className="nav-item dicePanel">

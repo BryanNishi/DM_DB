@@ -15,11 +15,13 @@
 
 
 .character {
-    background-image: url("../../assets/images/char.jpg");
-    background-position-y: 25%;
+    background-image: url("../../assets/images/char_bg.jpg");
     background-size: cover;
-    height: 100vh;
-    color: white;
+    background-attachment: fixed;
+    overflow: hidden;
+    background-position-y: 25%;
+    width: 100%;
+    min-height: 100vh;
 }
 
 .raceCards {

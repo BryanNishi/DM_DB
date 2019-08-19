@@ -1,0 +1,63 @@
+@font-face {
+    font-family: moria;
+    src: url(../../assets/fonts/Moria.TTF);
+}
+
+@font-face {
+    font-family: magic;
+    src: url(../../assets/fonts/MagicMedieval.ttf);
+}
+
+@font-face {
+    font-family: dragon;
+    src: url(../../assets/fonts/Dragon.ttf);
+}
+
+/* Body styling */
+.featureBody {
+    background-image: url(../../assets/images/createBG.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;  
+
+}
+
+#spellSubmit{
+    margin-top: 1rem;
+
+}
+
+.scroll{
+    background-image: url(../../assets/images/scrollBackground.jpg);
+    background-size: cover;  
+    background-repeat: no-repeat;
+    background-attachment: scroll;  
+    width: 58rem;
+    padding: 5rem 8rem 2rem 8rem;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 10px;
+    font-size: 1.4rem;    
+    height: 28rem;
+    overflow-y: auto;
+    
+}
+
+.spellTable, .col-sm-4, .col-sm-8{
+    border: solid black 0.05rem;    
+}
+
+#featureSubmit {
+    background-color: maroon;
+    color: white;
+    box-shadow: 2px 2px 10px black;
+    margin: 3%;
+}
+
+#featureSubmit:hover {
+    background-color: white;
+    color: maroon;
+}
+
