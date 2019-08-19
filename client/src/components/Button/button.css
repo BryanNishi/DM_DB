@@ -1,0 +1,16 @@
+button {
+    background-image: linear-gradient(maroon, rgb(65, 0, 0));
+    color: white;
+    border-radius: 1rem;
+    padding: 1rem 1rem 0rem 1rem;
+    line-height: 1rem;
+}
+
+button:hover {
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(61, 61, 61));
+    color: maroon;
+}
+
+button:focus {
+    outline: none;
+}

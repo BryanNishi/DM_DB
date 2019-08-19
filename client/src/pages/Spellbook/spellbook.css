@@ -1,0 +1,32 @@
+@font-face {
+    font-family: moria;
+    src: url(../../assets/fonts/Moria.TTF);
+}
+
+@font-face {
+    font-family: magic;
+    src: url(../../assets/fonts/MagicMedieval.ttf);
+}
+
+@font-face {
+    font-family: chancery;
+    src: url(../../assets/fonts/Chancery.TTF);
+}
+
+.spellTable {
+    padding: 3rem;
+}
+
+.spellBody {
+    background-image: url("../../assets/images/spellbook-bg.jpg");
+    background-size: cover;
+    background-position-y: 25%;
+    height: 100vh;
+    color: white;
+}
+
+.spellbook h1 {
+    font-family: moria;
+    font-size: 3rem;
+    margin-top: 2rem;
+}

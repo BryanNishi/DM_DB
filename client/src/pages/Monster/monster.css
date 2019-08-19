@@ -1,0 +1,54 @@
+@font-face {
+    font-family: moria;
+    src: url(../../assets/fonts/Moria.TTF);
+}
+
+@font-face {
+    font-family: magic;
+    src: url(../../assets/fonts/MagicMedieval.ttf);
+}
+
+@font-face {
+    font-family: chancery;
+    src: url(../../assets/fonts/Chancery.TTF);
+}
+
+.monster h1 {
+    font-family: moria;
+    font-size: 3rem;
+    margin-top: 2rem;
+}
+
+.monsterBody {
+    background-image: url("../../assets/images/Monster_BG.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    background-position-y: 25%;
+    background-position-x: 50%;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.monsterTable {
+    padding: 3rem;
+}
+
+.mainStats {
+    color: white;
+    text-shadow: 1px 1px rgb(100, 100, 100);
+    background-color: rgba(41, 41, 41, 0.9)
+}
+
+.secondaryStats {
+    color: white;
+    text-shadow: 1px 1px rgb(100, 100, 100);
+    background-color: rgba(41, 41, 41, 0.9);
+}
+
+.special {
+    color: white;
+    text-shadow: 1px 1px rgb(100, 100, 100);
+    background-color: rgba(41, 41, 41, 0.9);
+    margin: 0rem 4rem 1rem 4rem;
+}
