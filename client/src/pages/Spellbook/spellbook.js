@@ -160,26 +160,12 @@ class Spell extends Component {
                                     </div>
                                 </div>
                             </div>
-
-                        ) : <div className="col-md-11">
+                        ) : <div className="col">
                                 <h3 id="noResults">No Search Results Available</h3>
                             </div>
-
                         }
-
                     </div>
-
-
                 </div>
-
-
-
-
-
-
-
-
-
             </div>
         )
     }

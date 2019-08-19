@@ -1,0 +1,277 @@
+@font-face {
+    font-family: moria;
+    src: url(../../assets/fonts/Moria.TTF);
+}
+
+@font-face {
+    font-family: magic;
+    src: url(../../assets/fonts/MagicMedieval.ttf);
+}
+
+@font-face {
+    font-family: dragon;
+    src: url(../../assets/fonts/Dragon.ttf);
+}
+
+/* Body styling */
+.DM-Page {
+    background-image: url(../../assets/images/dm_bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Navbar Styling */
+.nav-icon {
+    width: 5rem;
+}
+
+.navbar {
+    font-family: moria;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.sl-btns {
+    margin: 0.25rem;
+}
+
+.dropdown-menu {
+    background-color: #33393f;
+}
+
+.dropdown-item {
+    color: #bbb;
+}
+
+/* Text style */
+.DM_Screen{
+    width: 100%;
+}
+
+h1 {
+    font-family: moria;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 3px 2px black;
+}
+
+h2 {
+    font-family: moria;
+    color: white;
+    font-size: 1.25rem;
+    text-align: center;
+    text-shadow: 2px 2px black;
+    margin-top: 0.5rem;
+}
+
+h3 {
+    font-family: magic;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 2px 2px black;
+}
+
+label {
+    color: white;
+    font-family: magic;
+}
+
+p{
+    font-family: magic;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+/* element styling */
+.jumbotron {
+    background-color: white;
+    padding: 1rem;
+}
+
+#diceRow {
+    background-color: #666;
+    opacity: 0.9;
+    padding: 1rem 1.5rem;
+    text-align: center; 
+    margin-left: 0.75rem; 
+    position: fixed;
+}
+
+.DM-Notes{
+    
+    padding: 1.5rem;
+}
+
+/* .fixed-Notes{
+    position: fixed;
+    z-index: 9;
+} */
+
+#rollTotal {
+    font-family: dragon;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#rolls {
+    font-family: dragon;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.results {
+    margin-left: 0.75rem;
+}
+
+.form-control {
+    margin: auto;
+    width: 75%;
+}
+
+#multi {
+    margin: auto;
+    width: 90%;
+}
+
+.dmScreen {
+    margin-left: 2rem;
+    margin-right: 1rem;
+}
+
+.abilityTitle{
+    margin: 0.25rem 0.25rem;
+    background-color: #666;
+    text-align: center;
+}
+
+.abilityRow{
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+#str {
+    background-color: maroon;
+    margin: 0.25rem;
+    
+}
+
+#strBody {
+    background-color: rgb(128, 75, 75);
+    font-family: magic;
+    width: 50px;
+}
+
+#dex {
+    background-color: green;
+    margin: 0.25rem;
+}
+
+#dexBody {
+    background-color: rgb(50, 128, 75);
+    font-family: magic;
+}
+
+#con {
+    background-color: rgb(0, 0, 200);
+    margin: 0.25rem;
+}
+
+#conBody {
+    background-color: rgb(75, 75, 255);
+    font-family: magic;
+}
+
+#int {
+    background-color: purple;
+    margin: 0.25rem;
+}
+
+#intBody {
+    background-color: rgb(140, 85, 140);
+    font-family: magic;
+}
+
+#wis {
+    background-color: teal;
+    margin: 0.25rem;
+}
+
+#wisBody {
+    background-color: rgb(100, 150, 150);
+    font-family: magic;
+}
+
+#cha {
+    background-color: rgb(245, 150, 0);
+    margin: 0.25rem;
+}
+
+#chaBody {
+    background-color: rgb(250, 165, 100);
+    font-family: magic;
+}
+
+/* Buttons */
+.btn {
+    margin: 0.25rem;
+    background: transparent;
+}
+
+.create-btn {
+    background-color: maroon;
+    font-family: moria;
+    color: white;
+    text-shadow: 2px 1px #666;
+    font-size: 1.2rem;
+}
+
+#clear {
+    font-family: dragon;
+    font-size: 1.5rem;
+    margin-top: 5%;
+}
+
+.diceRoll {
+    padding: 0rem 1rem;
+    margin: -0.5rem 0rem;
+}
+
+.target {
+    width: 50%;
+    min-height: 200px;
+    border: 1px solid grey;
+  }
+
+  .item-container {
+    width: 40%;
+  }
+
+  .item {
+    padding: 10px;
+    border: 1px solid grey;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+.newCharacterInput{
+    margin-top: 2rem; 
+     
+}
+
+.buttonCol{
+    padding-left: 2.5rem;    
+}
+
+Col{
+    border: none;
+}
+
+.tracker{
+    background-color: rgba(102, 102, 102, 0.7);
+    margin: 0rem 3rem;
+}

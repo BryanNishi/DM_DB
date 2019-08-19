@@ -13,20 +13,25 @@
     src: url(../../assets/fonts/Chancery.TTF);
 }
 
-.spellTable {
-    padding: 3rem;
-}
-
-.spellBody {
-    background-image: url("../../assets/images/spellbook-bg.jpg");
-    background-size: cover;
-    background-position-y: 25%;
-    height: 100vh;
-    color: white;
-}
-
 .spellbook h1 {
     font-family: moria;
     font-size: 3rem;
     margin-top: 2rem;
+}
+
+
+
+.spellBody {
+    background-image: url("../../assets/images/spellbook-bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    background-position-y: 25%;
+    background-position-x: 50%;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.spellTable {
+    padding: 3rem;
 }
