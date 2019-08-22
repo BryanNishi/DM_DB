@@ -1,9 +1,10 @@
-.Sheet{
-    background-image: url("../../assets/images/createBG.jpg");
+.sheet{
+    background-image: url("../../assets/images/char_bg.jpg");
     background-size: cover;
-    background-attachment: fixed;   
-    text-align: center;
+    background-attachment: fixed;
     overflow: hidden;
+    background-position-y: 25%;
+    background-position-x: 50%;
     width: 100%;
     min-height: 100vh;
 }

@@ -13,13 +13,12 @@
     src: url(../../assets/fonts/Chancery.TTF);
 }
 
-.spellbook h1 {
-    font-family: moria;
-    font-size: 3rem;
-    margin-top: 2rem;
+
+.mainStats,
+.description,
+.special {
+    padding: 1rem;
 }
-
-
 
 .spellBody {
     background-image: url("../../assets/images/spellbook-bg.jpg");
@@ -32,6 +31,16 @@
     min-height: 100vh;
 }
 
+.spellBody Button {
+    margin: 0.5rem 0.5rem 0.5rem 0rem;
+}
+
 .spellTable {
     padding: 3rem;
+}
+
+.description {
+    color: white;
+    text-shadow: 1px 1px rgb(100, 100, 100);
+    background-color: rgba(41, 41, 41, 0.9)
 }

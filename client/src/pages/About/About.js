@@ -22,7 +22,8 @@ const About = (props) => {
                     <li>Print out finished character sheets</li>
                 </ul>
             </div>
-            <Button className="login-btn" type="login" onClick="loginHandler" name="Login / Register" />
+            <h3>All data is stored locally to your machine, no login required. Clearing your cache will delete your info!</h3>
+            {/* <Button className="login-btn" type="login" onClick="loginHandler" name="Login / Register" /> */}
             <Footer />
         </div>
     )

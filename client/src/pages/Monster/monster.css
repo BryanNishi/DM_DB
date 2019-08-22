@@ -15,6 +15,11 @@
 
 .monster h1 {
     font-family: moria;
+    font-size: 3.5rem;
+    margin-top: 1rem;
+}
+
+.monster h3 {
     font-size: 3rem;
     margin-top: 2rem;
 }
@@ -24,10 +29,14 @@
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
-    background-position-y: 25%;
+    background-position-y: 45%;
     background-position-x: 50%;
     width: 100%;
     min-height: 100vh;
+}
+
+.monsterBody Button{
+    margin: 0.5rem 0.5rem 0.5rem 0rem;
 }
 
 .monsterTable {
@@ -44,6 +53,7 @@
     color: white;
     text-shadow: 1px 1px rgb(100, 100, 100);
     background-color: rgba(41, 41, 41, 0.9);
+    margin-top: 1rem;
 }
 
 .special {

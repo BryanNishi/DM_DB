@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NavBar from '../../components/NavBar';
+import Button from '../../components/Button';
 import "./spellbook.css";
 import API from '../../utils/API';
 import $ from 'jquery';
@@ -112,18 +113,17 @@ class Spell extends Component {
             <div className="spellBody">
                 <NavBar />
                 <h1>Spell Book</h1>
-                <div className="row">
-                    <div className="col-md-3">
-                        <form>
-                            <input list="browsers" name="browser" id="spellSearch" className="form-control" placeholder="Search Spell Library" onSelect={this.selectSpell.bind(this)} />
-                            <datalist id="browsers" >
-                                {this.state.spellList.map(spell => <option key={spell} value={spell} />)}
-                            </datalist>
-                            <center>
-                                <a className="btn create-btn" role="button" id="spellSubmit" onClick={this.submitSearch}>Scroogle</a>
-                            </center>
-                        </form>
-                    </div>
+                <div className=" d-flex justify-content-center">
+                    <form>
+                        <input list="browsers" name="browser" id="spellSearch" className="form-control" placeholder="Search Spell Library" onSelect={this.selectSpell.bind(this)} />
+                        <datalist id="browsers" >
+                            {this.state.spellList.map(spell => <option key={spell} value={spell} />)}
+                        </datalist>
+                        <center>
+                            <Button className="create-btn" id="spellSubmit" type="submit" onClick={this.submitSearch} name="Search" />
+                            <Button className="create-btn" id="spellClear" type="submit" name="Clear" />
+                        </center>
+                    </form>
                 </div>
                 <div class="row">
                     <div className="col-md-12">
@@ -143,13 +143,14 @@ class Spell extends Component {
                                         <br />
                                         <strong>Components:</strong> {this.state.components}
                                     </div>
-                                    <div className="col-sm-7 secondaryStats">
-                                        <strong>Description:</strong> {this.state.desc}
+                                    <div className="col-sm-7 description">
+                                        <strong>Description:</strong>
+                                        <br />
+                                        {this.state.desc}
                                     </div>
                                 </div>
                                 <div className="row justify-content-around special">
                                     <div className="col-sm-11">
-
                                         <strong>Page:</strong> {this.state.page}
                                         <br />
                                         <strong>Classes:</strong> {this.state.classes}
@@ -167,7 +168,7 @@ class Spell extends Component {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 

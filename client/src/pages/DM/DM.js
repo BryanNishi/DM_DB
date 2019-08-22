@@ -3,9 +3,11 @@ import './DM.css';
 import DM_ScreenPDF from '../../assets/images/dmScreen.pdf';
 import NavBar from '../../components/NavBar';
 import Card from '../../components/BattleOrder/Card';
+import Button from "../../components/Button";
 import HTML5Backend from 'react-dnd-html5-backend'
+import Textbox from "../../components/Textbox";
 import { DragDropContext } from 'react-dnd';
-import { Button, ButtonToolbar, FormGroup, Input, Row, Col, Container } from 'reactstrap';
+import { ButtonToolbar, FormGroup, Input, Row, Col, Container } from 'reactstrap';
 const update = require('immutability-helper');
 
 class DM extends Component {
@@ -95,38 +97,65 @@ class DM extends Component {
         document.getElementById("characterIntiative").value = "";
     }
 
+    saveDmNotes = event => {
+        event.preventDefault();
+        var savesnotesbtn = document.getElementById("savenotesbtn");
+
+        //FILL TEXT AREAS WITH NOTES
+        for (var i = 1; i < 11; i++) {
+            document.getElementById("#note" + i + "input").value(localStorage.getItem("note" + i));
+        }
+
+        function saveNotes() {
+            //Change styles of button
+            document.getElementById("#savenotesbtn").removeClass("notSaved").addClass("Saved");
+            // Save data to localstorage
+            for (var i = 1; i < 11; i++) {
+                localStorage.setItem("note" + i, document.getElementById("#note" + i + "input").value());
+            }
+        };
+        savesnotesbtn.addEventListener("click", saveNotes);
+    };
 
     render() {
         return (
             <div className="DM-Page">
                 <NavBar />
                 <h1>DM Screen</h1>
-                <div className="row">
-                    <div className="col">
-                        <ButtonToolbar>
-                            <Button variant="outline-light">Load Campaign</Button>
-                            <Button variant="outline-light">Save Campaign</Button>
-                        </ButtonToolbar>
-                    </div>
-                </div>
-                <div className="row DM-Notes">
+                {/* <div className=" d-flex justify-content-center">
+                    <ButtonToolbar>
+                        <Button className="create-btn" type="submit" onClick="loadCampaign" name="Load Campaign" />
+                        <Button className="create-btn" type="submit" onClick="saveCampaign" name="Save Campaign" />
+                    </ButtonToolbar>
+                </div> */}
+                <div className=" d-flex justify-content-center">
                     <div className="col-sm-5 fixed-Notes">
                         <h2>DM's Notes</h2>
-                        <textarea rows="15" cols="75" placeholder={"Type Notes Here"}></textarea>
+                        <Textbox />
+                        {/* <textarea id="note" rows="12" cols="75" placeholder={"Type Notes Here"}></textarea>
+                        <Button className="create-btn" id="savenotesbtn" type="submit" onClick={this.saveDmNotes} name="Save Notes" /> */}
                     </div>
-                    <div className="col-sm-6 tracker">
+                    <div className="col-sm-5 fixed-Notes">
+                        <h2>Campaign Notes</h2>
+                        <Textbox />
+                        {/* <textarea id="note" rows="12" cols="75" placeholder={"Type Notes Here"}></textarea>
+                        <Button className="create-btn" id="savenotesbtn" type="submit" onClick={this.saveDmNotes} name="Save Notes" /> */}
+                    </div>
+                </div>
+                <div className=" d-flex justify-content-center">
+                    <div className="tracker">
                         <h2>Character/Initative Tracker</h2>
                         <Container>
                             <FormGroup className="newCharacterInput">
                                 <Row>
                                     <Col>
-                                        <Input type="input" name="inputName" id="characterName" placeholder="Character Name" onChange={this.addCharacterName.bind(this)} />
+                                        <Input type="input" name="inputName" id="characterName" placeholder="Name" onChange={this.addCharacterName.bind(this)} />
                                     </Col>
                                     <Col sm="3">
-                                        <Input type="input" name="inputAC" id="characterAC" placeholder="Armor Class" onChange={this.addCharacterAC.bind(this)} />
+                                        <Input type="input" name="inputAC" id="characterAC" placeholder="AC" onChange={this.addCharacterAC.bind(this)} />
                                     </Col>
                                     <Col sm="3">
-                                        <Input type="input" name="selectHP" id="characterHP" placeholder="Hit Points" onChange={this.addCharacterHP.bind(this)} />
+                                        <Input type="input" name="selectHP" id="characterHP" placeholder="HP" onChange={this.addCharacterHP.bind(this)} />
                                     </Col>
                                     <Col sm="3">
                                         <Input type="input" name="inputIntiative" id="characterIntiative" placeholder="Intiative" onChange={this.addCharacterIntiative.bind(this)} />
@@ -137,8 +166,8 @@ class DM extends Component {
                                 <Row>
                                     <Col md="12" md={{ size: 6, offset: 4 }}>
                                         <ButtonToolbar>
-                                            <Button variant="outline-light" onClick={this.addCharacter} className="newCharacterButton">Add Character</Button>
-                                            <Button variant="outline-light">Auto Sort</Button>
+                                            <Button className="create-btn" type="submit" onClick={this.addCharacter} name="Add Character" />
+                                            <Button className="create-btn" type="submit" onClick="sort" name="Auto Sort" />
                                         </ButtonToolbar>
                                     </Col>
                                 </Row>
@@ -161,10 +190,10 @@ class DM extends Component {
                 </div>
                 <div className="col-sm-12">
                     <div className="dmScreen">
-                        <iframe src={DM_ScreenPDF} width="2500" height="750" className="DM_Screen" title="DM Screen" />
+                        <iframe src={DM_ScreenPDF} width="1300" height="750" title="DM Screen" />
                     </div>
                 </div>
-            </div>
+            </div >
         );
     }
 }

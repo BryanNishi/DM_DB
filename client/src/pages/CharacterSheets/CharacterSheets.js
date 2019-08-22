@@ -1,13 +1,12 @@
 import React from "react";
-import "./style.css";
 import NavBar from '../../components/NavBar'
-import CharSheet from '../../components/CharSheet'
+import "./style.css";
 
 const Sheet = () => (
     <div className="sheet">
     <NavBar />
     <h1>Character Sheets</h1>
-    <CharSheet />
+  
 
 </div>
 );

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar from '../../components/NavBar';
-import Footer from '../../components/Footer'
-import "./monster.css"
+import Button from '../../components/Button';
+import "./monster.css";
 import API from '../../utils/API';
 import $ from 'jquery';
 
@@ -128,23 +128,24 @@ class Monster extends Component {
 
     }
 
+
+   
     render() {
         return (
             <div className="monsterBody">
                 <NavBar />
                 <h1>Monster Manual</h1>
-                <div className="row">
-                    <div className="col-md-3">
-                        <form>
-                            <input list="browsers" name="browser" id="monsterSearch" className="form-control" placeholder="Search Monster Library" onSelect={this.selectMonster.bind(this)} />
-                            <datalist id="browsers">
-                                {this.state.searchList.map(monster => <option key={monster} value={monster} />)}
-                            </datalist>
-                            <center>
-                                <a className="btn create-btn" role="button" id="monsterSubmit" onClick={this.submitSearch}>Monsearch</a>
-                            </center>
-                        </form>
-                    </div>
+                <div className=" d-flex justify-content-center">
+                    <form>
+                        <input list="browsers" name="browser" id="monsterSearch" className="form-control" placeholder="Search Monsters" onSelect={this.selectMonster.bind(this)} />
+                        <datalist id="browsers">
+                            {this.state.searchList.map(monster => <option key={monster} value={monster} />)}
+                        </datalist>
+                        <center>
+                            <Button className="create-btn" id="monsterSubmit" type="submit" onClick={this.submitSearch} name="Search" />
+                            <Button className="create-btn" id="monsterClear" type="submit" name="Clear" />
+                        </center>
+                    </form>
                 </div>
                 <div class="row">
                     <div className="col-md-12">
@@ -152,9 +153,10 @@ class Monster extends Component {
                             <div className="scroll">
                                 <div className="row justify-content-around monsterTable">
                                     <div className="col-sm-4 mainStats">
-                                        <h2>Main Stats</h2>
+
+                                        <h2>{this.state.searchResults.name}</h2>
                                         <br />
-                                        <h3>{this.state.searchResults.name}</h3>
+                                        <h3>Main Stats</h3>
                                         <hr />
                                         <strong>Hit Points:</strong> {this.state.searchResults.hit_points}<br />
                                         <strong>Armor Class:</strong> {this.state.searchResults.armor_class}<br />
@@ -186,7 +188,7 @@ class Monster extends Component {
                                         {this.state.searchResults.alignment ? <div><strong>Alignment:</strong> {this.state.searchResults.alignment}</div> : ""}
                                     </div>
                                     <div className="col-sm-7 secondaryStats">
-                                        <h2>Actions</h2>
+                                        <h3>Actions</h3>
                                         <div className="actions"></div>
                                         {this.state.searchResults.legendary_actions ? (
                                             <span>

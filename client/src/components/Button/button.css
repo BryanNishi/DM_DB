@@ -1,9 +1,17 @@
+@font-face {
+    font-family: magic;
+    src: url(../../assets/fonts/MagicMedieval.ttf);
+}
+
 button {
     background-image: linear-gradient(maroon, rgb(65, 0, 0));
     color: white;
     border-radius: 1rem;
     padding: 1rem 1rem 0rem 1rem;
     line-height: 1rem;
+    font-family: magic;
+    font-size: 1.2rem;
+    margin: 0rem 0.5rem;
 }
 
 button:hover {
