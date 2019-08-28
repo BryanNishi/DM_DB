@@ -3,33 +3,31 @@ import './DM.css';
 import DM_ScreenPDF from '../../assets/images/dmScreen.pdf';
 import NavBar from '../../components/NavBar';
 import Card from '../../components/BattleOrder/Card';
-import Button from "../../components/Button";
 import HTML5Backend from 'react-dnd-html5-backend'
 import Textbox from "../../components/Textbox";
 import { DragDropContext } from 'react-dnd';
-import { ButtonToolbar, FormGroup, Input, Row, Col, Container } from 'reactstrap';
+import { Button, ButtonToolbar, FormGroup, Input, Row, Col, Container } from 'reactstrap';
 const update = require('immutability-helper');
 
 class DM extends Component {
     state = {
         cards: [
-            {
-                id: 1,
-                text: 'Character 1',
-                ac: "AC",
-                hp: "HP"
-            },
-            {
-                id: 2,
-                text: 'Characte 2',
-                ac: "AC",
-                hp: "HP"
-            },
+
         ],
         name: "",
+        intiative: "",
         ac: "",
         hp: "",
-        intiative: ""
+        dmNotes: "",
+        campaignNotes: ""
+    }
+
+    componentDidMount() {
+        let storedCampaignNotes = localStorage.getItem('Campaign Notes') || '';
+        document.getElementById("campaignNotes").value = storedCampaignNotes;
+
+        let storedDmNotes = localStorage.getItem('DM Notes') || '';
+        document.getElementById("dmNotes").value = storedDmNotes;
     }
 
     moveCard = (dragIndex, hoverIndex) => {
@@ -72,8 +70,8 @@ class DM extends Component {
         event.preventDefault();
 
         let newCharacterObj = {
-            id: this.state.intiative,
-            text: this.state.name,
+            id: this.state.name,
+            text: this.state.intiative,
             ac: this.state.ac,
             hp: this.state.hp
         }
@@ -95,27 +93,29 @@ class DM extends Component {
         document.getElementById("characterHP").value = "";
         document.getElementById("characterAC").value = "";
         document.getElementById("characterIntiative").value = "";
+
+        let newCard = this.state.cards;
+        localStorage.setItem('Cards', newCard);
     }
 
-    saveDmNotes = event => {
-        event.preventDefault();
-        var savesnotesbtn = document.getElementById("savenotesbtn");
+    dmNotesHandler = (event) => {
+        this.setState({
+            dmNotes: event.target.value
+        })
+        let dmNotes = this.state.dmNotes;
+        localStorage.setItem('DM Notes', dmNotes);
 
-        //FILL TEXT AREAS WITH NOTES
-        for (var i = 1; i < 11; i++) {
-            document.getElementById("#note" + i + "input").value(localStorage.getItem("note" + i));
-        }
+    }
 
-        function saveNotes() {
-            //Change styles of button
-            document.getElementById("#savenotesbtn").removeClass("notSaved").addClass("Saved");
-            // Save data to localstorage
-            for (var i = 1; i < 11; i++) {
-                localStorage.setItem("note" + i, document.getElementById("#note" + i + "input").value());
-            }
-        };
-        savesnotesbtn.addEventListener("click", saveNotes);
-    };
+    campaignNotesHandler = (event) => {
+        this.setState({
+            campaignNotes: event.target.value
+        })
+        let campaignNotes = this.state.campaignNotes;
+        localStorage.setItem('Campaign Notes', campaignNotes);
+    }
+    
+      
 
     render() {
         return (
@@ -131,15 +131,11 @@ class DM extends Component {
                 <div className=" d-flex justify-content-center">
                     <div className="col-sm-5 fixed-Notes">
                         <h2>DM's Notes</h2>
-                        <Textbox />
-                        {/* <textarea id="note" rows="12" cols="75" placeholder={"Type Notes Here"}></textarea>
-                        <Button className="create-btn" id="savenotesbtn" type="submit" onClick={this.saveDmNotes} name="Save Notes" /> */}
+                        <textarea id="dmNotes" onChange={this.dmNotesHandler.bind(this)} />
                     </div>
                     <div className="col-sm-5 fixed-Notes">
                         <h2>Campaign Notes</h2>
-                        <Textbox />
-                        {/* <textarea id="note" rows="12" cols="75" placeholder={"Type Notes Here"}></textarea>
-                        <Button className="create-btn" id="savenotesbtn" type="submit" onClick={this.saveDmNotes} name="Save Notes" /> */}
+                        <textarea id="campaignNotes" onChange={this.campaignNotesHandler.bind(this)} />
                     </div>
                 </div>
                 <div className=" d-flex justify-content-center">
@@ -166,8 +162,8 @@ class DM extends Component {
                                 <Row>
                                     <Col md="12" md={{ size: 6, offset: 4 }}>
                                         <ButtonToolbar>
-                                            <Button className="create-btn" type="submit" onClick={this.addCharacter} name="Add Character" />
-                                            <Button className="create-btn" type="submit" onClick="sort" name="Auto Sort" />
+                                            <Button className="btn" type="submit" onClick={this.addCharacter}>Add Character</Button>
+                                            <Button className="btn" type="submit" onClick={this.sortCharacter}>Sort</Button>
                                         </ButtonToolbar>
                                     </Col>
                                 </Row>

@@ -4,12 +4,12 @@ import { findDOMNode } from 'react-dom';
 import {
     DragSource,
     DropTarget,
-  //  ConnectDropTarget,
-  //  ConnectDragSource,
-   // DropTargetMonitor,
-   // DropTargetConnector,
-   // DragSourceConnector,
-   // DragSourceMonitor,
+    //  ConnectDropTarget,
+    //  ConnectDragSource,
+    // DropTargetMonitor,
+    // DropTargetConnector,
+    // DragSourceConnector,
+    // DragSourceMonitor,
 } from 'react-dnd';
 // import { XYCoord } from 'dnd-core';
 import flow from 'lodash/flow';
@@ -124,18 +124,10 @@ class Card extends React.Component {
                     style={{ ...style, opacity }}>
 
                     <div className="intiativeStats">
-
                         <span><b>Player:</b>: {id} </span>
-
-                        <span>
-                            <input className="name" placeholder={text} />
-                        </span>
-
-
                         <span><b>AC: </b> <input className="ac" placeholder={ac} /> </span>
-
                         <span><b>HP: </b> <input className="hp" placeholder={hp} /> / <input className="hp" placeholder={hp} /> </span>
-
+                        <span><b>Intiative: </b><input className="name" placeholder={text} /> </span>
                         <span><input className="notes" placeholder="Notes" /> </span>
                     </div>
                 </div>),

@@ -39,6 +39,26 @@ iframe {
     margin-top: 2rem;
 }
 
+.btn {
+    background-image: linear-gradient(maroon, rgb(65, 0, 0));
+    color: white;
+    border-radius: 1rem;
+    padding: 1rem 1rem 0.75rem 1rem;
+    line-height: 0rem;
+    font-family: magic;
+    font-size: 1.5rem;
+    margin: 0rem 0.5rem;
+}
+
+.btn:hover {
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(61, 61, 61));
+    color: maroon;
+}
+
+.btn:focus {
+    outline: none;
+}
+
 .buttonCol {
     padding-left: 2.5rem;
 }
@@ -50,4 +70,10 @@ Col {
 .tracker {
     background-color: rgba(102, 102, 102, 0.7);
     margin: 1rem 3rem;
+}
+
+textarea {
+    width: 100rem;
+    height: 20rem;
+    max-width: 40vw;
 }
