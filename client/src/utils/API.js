@@ -13,13 +13,13 @@ export default {
     return axios.get("http://www.dnd5eapi.co/api/spells/" + spells);
   },
   getClass: function (classes) {
-    return axios.get("http://www.dnd5eapi.co/api/classes/" + classes);
+    return axios.get("https://www.dnd5eapi.co/api/classes/" + classes);
   },
   getStartingEquipment: function (classIndex) {
-    return axios.get("http://www.dnd5eapi.co/api/startingequipment/" + classIndex)
+    return axios.get("https://www.dnd5eapi.co/api/startingequipment/" + classIndex)
   },
   getfeature: function (features) {
-    return axios.get("http://www.dnd5eapi.co/api/features/" + features);
+    return axios.get("https://www.dnd5eapi.co/api/features/" + features);
   },
   getInn: function () {
     return axios.get("/api/inn");

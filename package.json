@@ -3,7 +3,7 @@
   "version": "1.5.0",
   "description": "",
   "main": "server.js",
-  "homepage": "http://bryannishi.github.io/DM_DB/",
+  "homepage": "https://bryannishi.github.io/DM_DB/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
