@@ -23,11 +23,20 @@ class DM extends Component {
     }
 
     componentDidMount() {
-        let storedCampaignNotes = localStorage.getItem('Campaign Notes') || '';
+        // retrive notes
+        const storedCampaignNotes = localStorage.getItem('Campaign Notes') || '';
         document.getElementById("campaignNotes").value = storedCampaignNotes;
 
-        let storedDmNotes = localStorage.getItem('DM Notes') || '';
+        const storedDmNotes = localStorage.getItem('DM Notes') || '';
         document.getElementById("dmNotes").value = storedDmNotes;
+
+        // retreive character initative cards
+        const retrievedCard = localStorage.getItem('Cards') || '';
+        if (retrievedCard != '') {
+            console.log('Cards: ', JSON.parse(retrievedCard));
+            let newCharacter = JSON.parse(retrievedCard);
+            this.setState({ cards: newCharacter });
+        };
     }
 
     moveCard = (dragIndex, hoverIndex) => {
@@ -94,40 +103,26 @@ class DM extends Component {
         document.getElementById("characterAC").value = "";
         document.getElementById("characterIntiative").value = "";
 
-        let newCard = this.state.cards;
-        localStorage.setItem('Cards', newCard);
+        localStorage.setItem('Cards', JSON.stringify(newCharacter))
     }
 
+    // state and localstorage using callback function to make up for setState not being synchronous
     dmNotesHandler = (event) => {
-        this.setState({
-            dmNotes: event.target.value
-        })
-        let dmNotes = this.state.dmNotes;
-        localStorage.setItem('DM Notes', dmNotes);
-
+        let newNotes = event.target.value
+        this.setState({ dmNotes: newNotes }, () => localStorage.setItem('DM Notes', newNotes))
     }
 
     campaignNotesHandler = (event) => {
-        this.setState({
-            campaignNotes: event.target.value
-        })
-        let campaignNotes = this.state.campaignNotes;
-        localStorage.setItem('Campaign Notes', campaignNotes);
+        let newNotes = event.target.value
+        this.setState({ campaignNotes: newNotes }, () => localStorage.setItem('Campaign Notes', newNotes))
     }
-    
-      
 
     render() {
         return (
             <div className="DM-Page">
                 <NavBar />
                 <h1>DM Screen</h1>
-                {/* <div className=" d-flex justify-content-center">
-                    <ButtonToolbar>
-                        <Button className="create-btn" type="submit" onClick="loadCampaign" name="Load Campaign" />
-                        <Button className="create-btn" type="submit" onClick="saveCampaign" name="Save Campaign" />
-                    </ButtonToolbar>
-                </div> */}
+
                 <div className=" d-flex justify-content-center">
                     <div className="col-sm-5 fixed-Notes">
                         <h2>DM's Notes</h2>
