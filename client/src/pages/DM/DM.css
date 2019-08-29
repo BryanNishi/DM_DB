@@ -7,72 +7,48 @@
     min-height: 100vh;
 }
 
-.dmScreen {
+.DM-Page .dmScreen {
     display: flex;
     justify-content: center;
     margin: 1rem 0rem;
 }
 
-iframe {
+.DM-Page iframe {
     max-width: 90vw;
     max-height: 90vh;
 }
 
-.target {
+.DM-Page .target {
     width: 50%;
     min-height: 200px;
     border: 1px solid grey;
 }
 
-.item-container {
+.DM-Page .item-container {
     width: 40%;
 }
 
-.item {
+.DM-Page .item {
     padding: 10px;
     border: 1px solid grey;
     margin-bottom: 20px;
     color: white;
 }
 
-.newCharacterInput {
+.DM-Page .newCharacterInput {
     margin-top: 2rem;
 }
 
-.btn {
-    background-image: linear-gradient(maroon, rgb(65, 0, 0));
-    color: white;
-    border-radius: 1rem;
-    padding: 1rem 1rem 0.75rem 1rem;
-    line-height: 0rem;
-    font-family: magic;
-    font-size: 1.5rem;
-    margin: 0rem 0.5rem;
-}
-
-.btn:hover {
-    background-image: linear-gradient(rgb(255, 255, 255), rgb(61, 61, 61));
-    color: maroon;
-}
-
-.btn:focus {
-    outline: none;
-}
-
-.buttonCol {
+.DM-Page .buttonCol {
     padding-left: 2.5rem;
 }
 
-Col {
-    border: none;
-}
-
-.tracker {
+.DM-Page .tracker {
     background-color: rgba(102, 102, 102, 0.7);
     margin: 1rem 3rem;
 }
 
-textarea {
+.DM-Page textarea {
     width: 100rem;
     height: 20rem;
     max-width: 40vw;

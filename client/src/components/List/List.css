@@ -1,0 +1,15 @@
+.list-overflow-container {
+  display: flex;
+  justify-content: center;
+}
+
+.list-group {
+  width: 50%;
+  max-width: 75vw;
+  margin: 1rem;
+}
+
+.list-group li{
+  font-size: 1.5rem;
+  font-family: magic;
+}

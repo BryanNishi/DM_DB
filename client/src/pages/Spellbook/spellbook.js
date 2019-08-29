@@ -120,8 +120,8 @@ class Spell extends Component {
                             {this.state.spellList.map(spell => <option key={spell} value={spell} />)}
                         </datalist>
                         <center>
-                            <Button className="create-btn" id="spellSubmit" type="submit" onClick={this.submitSearch} name="Search" />
-                            <Button className="create-btn" id="spellClear" type="submit" name="Clear" />
+                            <Button id="spellSubmit" type="submit" onClick={this.submitSearch} name="Search" />
+                            <Button id="spellClear" type="submit" name="Clear" />
                         </center>
                     </form>
                 </div>

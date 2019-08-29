@@ -4,14 +4,15 @@
 }
 
 button {
-    background-image: linear-gradient(maroon, rgb(65, 0, 0));
+    background-image: linear-gradient(maroon, rgb(50, 0, 0));
+    text-shadow: 2px 2px 3px #333;
+    border: 1px solid #666;
     color: white;
-    border-radius: 1rem;
-    padding: 1rem 1rem 0rem 1rem;
-    line-height: 1rem;
+    border-radius: 10px;
     font-family: magic;
-    font-size: 1.2rem;
-    margin: 0rem 0.5rem;
+    font-size: 1.75rem;
+    padding: 0.1rem 1rem;
+    margin: 0.5rem 0.5rem;
 }
 
 button:hover {

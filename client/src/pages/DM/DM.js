@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './DM.css';
 import DM_ScreenPDF from '../../assets/images/dmScreen.pdf';
+import DM_ShopPDF from '../../assets/images/ShopCatalog.pdf';
 import NavBar from '../../components/NavBar';
 import Card from '../../components/BattleOrder/Card';
+import Button from '../../components/Button';
 import HTML5Backend from 'react-dnd-html5-backend'
-import Textbox from "../../components/Textbox";
 import { DragDropContext } from 'react-dnd';
-import { Button, ButtonToolbar, FormGroup, Input, Row, Col, Container } from 'reactstrap';
+import { ButtonToolbar, FormGroup, Input, Row, Col, Container } from 'reactstrap';
 const update = require('immutability-helper');
 
 class DM extends Component {
@@ -32,7 +33,7 @@ class DM extends Component {
 
         // retreive character initative cards
         const retrievedCard = localStorage.getItem('Cards') || '';
-        if (retrievedCard != '') {
+        if (retrievedCard !== '') {
             console.log('Cards: ', JSON.parse(retrievedCard));
             let newCharacter = JSON.parse(retrievedCard);
             this.setState({ cards: newCharacter });
@@ -155,11 +156,11 @@ class DM extends Component {
                             </FormGroup>
                             <FormGroup>
                                 <Row>
-                                    <Col md="12" md={{ size: 6, offset: 4 }}>
-                                        <ButtonToolbar>
-                                            <Button className="btn" type="submit" onClick={this.addCharacter}>Add Character</Button>
-                                            <Button className="btn" type="submit" onClick={this.sortCharacter}>Sort</Button>
-                                        </ButtonToolbar>
+                                    <Col>
+                                        <center>
+                                            <Button type="submit" onClick={this.addCharacter} name="Add Character" />
+                                            <Button type="submit" onClick={this.sortCharacter} name="Sort" />
+                                        </center>
                                     </Col>
                                 </Row>
                             </FormGroup>
@@ -180,8 +181,15 @@ class DM extends Component {
                     </div>
                 </div>
                 <div className="col-sm-12">
+                    <h2>Info Tables</h2>
                     <div className="dmScreen">
                         <iframe src={DM_ScreenPDF} width="1300" height="750" title="DM Screen" />
+                    </div>
+                </div>
+                <div className="col-sm-12">
+                    <h3>Shop Catalog</h3>
+                    <div className="dmScreen">
+                        <iframe src={DM_ShopPDF} width="1300" height="750" title="Shop Catalog" />
                     </div>
                 </div>
             </div >

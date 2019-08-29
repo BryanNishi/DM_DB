@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar from '../../components/NavBar';
 import Button from "../../components/Button";
-
+import { Link } from 'react-router-dom';
 import "./generators.css";
 
 
@@ -9,17 +9,16 @@ class Generators extends Component {
 
     state = {
         generators: [
-            { href: "/advcharacter", name: "Character Generator" },
-            { href: "/name", name: "Name Generator" },
-            { href: "/features", name: "Class Features" },
-            { href: "/classes", name: "Class Search" },
-            { href: "/character", name: "Quick NPC Generator" },
-            { href: "/npc", name: "NPC Generator" },
-            { href: "/name", name: "Name Generator" },
-            { href: "/land", name: "Land Name Generator" },
-            { href: "/inn", name: "Inn Name Generator" },
-            { href: "/dungeon", name: "Dungeon Generator" },
-            { href: "/treasure", name: "Treasure Generator" },
+            { to: "/advcharacter", name: "Character Creator" },
+            { to: "/name", name: "Name Generator" },
+            { to: "/features", name: "Class Features" },
+            { to: "/classes", name: "Class Search" },
+            { to: "/character", name: "Quick NPC Creator" },
+            { to: "/npc", name: "NPC Creator" },
+            { to: "/land", name: "Land Name" },
+            { to: "/inn", name: "Inn Name" },
+            { to: "/dungeon", name: "Dungeon" },
+            { to: "/treasure", name: "Treasure" },
         ]
     }
 
@@ -29,10 +28,9 @@ class Generators extends Component {
         let genButtons = (
             <div>
                 {this.state.generators.map(gen => {
-                    return <Button
-                        key={gen.name}
-                        href={gen.href}
-                        name={gen.name} />
+                    return <Link to={gen.to}>
+                        <Button key={gen.name} name={gen.name} />
+                    </Link>
                 })}
             </div>
         );

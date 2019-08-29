@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import NavBar from '../../components/NavBar';
 import Button from '../../components/Button';
-import "./monster.css";
 import API from '../../utils/API';
 import $ from 'jquery';
-
+import "./monster.css";
 
 class Monster extends Component {
 
@@ -14,71 +13,48 @@ class Monster extends Component {
         searchResults: []
     }
 
-
-
     componentDidMount() {
         API.getMonster("")
             .then(res => {
                 this.setState({
                     searchList: res.data.results.map(monster => monster.name)
-
                 });
-
-
             })
             .catch(err => console.log(err));
-
-
     }
 
     selectMonster = event => {
         console.log(event.target.value);
-
         var choice = event.target.value;
-
         let monsterIndex = this.state.searchList.indexOf(choice);
-
         if (monsterIndex !== -1) {
-
             this.monsterSearch(event.target.value);
         }
-
     }
 
     submitSearch = event => {
         event.preventDefault();
-
         let choice = $("#monsterSearch").val();
-
         this.monsterSearch(choice);
-
     }
 
     monsterSearch = choice => {
         let monsterIndex = this.state.searchList.indexOf(choice);
-
         console.log(monsterIndex);
-
         if (monsterIndex !== -1) {
-
-
             API.getMonster(monsterIndex + 1)
                 .then(res => {
                     this.setState({
                         searchResults: res.data
                     });
                     console.log(this.state.searchResults);
-
                     const searchResults = this.state.searchResults;
-
                     $(".actions").html("");
                     $(".legendaryActions").html("");
                     $(".specialAbilities").html("");
-
                     for (let i = 0; i < searchResults.actions.length; i++) {
-
                         $(".actions").append(
-                            `                 
+                            `                
                         <p>${searchResults.actions[i].name} </p> 
                         <ul>
                         <li><strong>Attack Bonus</strong>: ${searchResults.actions[i].attack_bonus}</li>
@@ -129,21 +105,21 @@ class Monster extends Component {
     }
 
 
-   
+
     render() {
         return (
             <div className="monsterBody">
                 <NavBar />
                 <h1>Monster Manual</h1>
-                <div className=" d-flex justify-content-center">
+                <div className="d-flex justify-content-center">
                     <form>
                         <input list="browsers" name="browser" id="monsterSearch" className="form-control" placeholder="Search Monsters" onSelect={this.selectMonster.bind(this)} />
                         <datalist id="browsers">
                             {this.state.searchList.map(monster => <option key={monster} value={monster} />)}
                         </datalist>
                         <center>
-                            <Button className="create-btn" id="monsterSubmit" type="submit" onClick={this.submitSearch} name="Search" />
-                            <Button className="create-btn" id="monsterClear" type="submit" name="Clear" />
+                            <Button type="submit" onClick={this.submitSearch} name="Search" />
+                            <Button type="submit" name="Clear" />
                         </center>
                     </form>
                 </div>
