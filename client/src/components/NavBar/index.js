@@ -42,11 +42,11 @@ class NavBar extends Component {
                                 <a className="nav-link" href="/spell">Spell Book</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/generators">Generators</a>
+                                <a className="nav-link" href="/generators">Random Generators</a>
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link" href="/character">Character Sheets</a>
+                                <a className="nav-link" href="/character">Character Creation</a>
                             </li>
 
                             <li className="nav-item dicePanel">

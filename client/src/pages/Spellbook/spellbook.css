@@ -23,7 +23,13 @@
     padding: 3rem;
 }
 
-.description {
+.spellBody .mainStats {
+    color: white;
+    text-shadow: 1px 1px rgb(100, 100, 100);
+    background-color: rgba(41, 41, 41, 0.9)
+}
+
+.spellBody .description {
     color: white;
     text-shadow: 1px 1px rgb(100, 100, 100);
     background-color: rgba(41, 41, 41, 0.9)

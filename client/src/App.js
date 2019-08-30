@@ -5,7 +5,7 @@ import DM from "./pages/DM";
 import Generators from "./pages/Generators";
 import Monster from "./pages/Monster";
 import Spellbook from "./pages/Spellbook";
-import Sheet from "./pages/CharacterSheets";
+import Characters from "./pages/Characters";
 import Inn from "./pages/Inn";
 import Land from "./pages/Land";
 import Name from "./pages/Name";
@@ -28,7 +28,7 @@ const App = () => (
       <Route path="/monster" component={Monster} />
       <Route path="/spell" component={Spellbook} />
       <Route path="/generators" component={Generators} />
-      <Route path="/character" component={Sheet} />
+      <Route path="/character" component={Characters} />
       <Route path="/inn" component={Inn} />
       <Route path="/land" component={Land} />
       <Route path="/name" component={Name} />

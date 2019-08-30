@@ -132,7 +132,7 @@ class Spell extends Component {
                                 <div className="row justify-content-around spellTable">
                                     <div className="col-sm-4 mainStats">
                                         <h3> {this.state.name}</h3>
-                                        <br />
+                                        <hr />
                                         <strong>Level:</strong> {this.state.level}
                                         <br />
                                         <strong>Range:</strong> {this.state.range}
@@ -142,15 +142,7 @@ class Spell extends Component {
                                         <strong>Ritual:</strong> {this.state.ritual}
                                         <br />
                                         <strong>Components:</strong> {this.state.components}
-                                    </div>
-                                    <div className="col-sm-7 description">
-                                        <strong>Description:</strong>
-                                        <br />
-                                        {this.state.desc}
-                                    </div>
-                                </div>
-                                <div className="row justify-content-around special">
-                                    <div className="col-sm-11">
+                                        <hr />
                                         <strong>Page:</strong> {this.state.page}
                                         <br />
                                         <strong>Classes:</strong> {this.state.classes}
@@ -158,6 +150,11 @@ class Spell extends Component {
                                         <strong>School:</strong> {this.state.school}
                                         <br />
                                         <strong>Subclasses:</strong> {this.state.subclasses}
+                                    </div>
+                                    <div className="col-sm-7 description">
+                                        <strong>Description:</strong>
+                                        <br />
+                                        {this.state.desc}
                                     </div>
                                 </div>
                             </div>
