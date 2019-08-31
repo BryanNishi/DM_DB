@@ -36,13 +36,13 @@ export default {
   getName: function () {
     return axios.get("/api/name");
   },
-  getUser: function () {
-    return axios.get("/api/user")
+  getWeapon: function () {
+    return axios.get("/api/weapon");
   },
-  postUser: function (data) {
-    return axios.post(`api/user`, data);
-
-  }
+  getCity: function () {
+    return axios.get("/api/city");
+  },
+  
 
 };
 

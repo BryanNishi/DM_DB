@@ -15,6 +15,8 @@ import Classes from "./pages/Classes";
 // import NPC from "./pages/NPC";
 import Dungeon from "./pages/Dungeon";
 import Treasure from "./pages/Treasure";
+import Weapon from "./pages/Weapon";
+import City from "./pages/City";
 
 
 
@@ -38,6 +40,8 @@ const App = () => (
       {/* <Route path="/npc" component={NPC} /> */}
       <Route path="/dungeon" component={Dungeon} />
       <Route path="/treasure" component={Treasure} />
+      <Route path="/weapon" component={Weapon} />
+      <Route path="/city" component={City} />
     </div>
   </Router>
 );

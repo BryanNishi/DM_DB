@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
-import { DragSource, DropTarget} from 'react-dnd';
+import { DragSource, DropTarget } from 'react-dnd';
 import flow from 'lodash/flow';
 import "./style.css";
 
@@ -114,7 +114,7 @@ class Card extends React.Component {
                     style={{ ...style, opacity }}>
 
                     <div className="intiativeStats">
-                        <span><b>Player:</b>: {id} </span>
+                        <span><b>Player:</b> <input className="id" placeholder={id} /> </span>
                         <span><b>AC: </b> <input className="ac" placeholder={ac} /> </span>
                         <span><b>HP: </b> <input className="hp" placeholder={hp} /> / <input className="hp" placeholder={hp} /> </span>
                         <span><b>Intiative: </b><input className="name" placeholder={text} /> </span>

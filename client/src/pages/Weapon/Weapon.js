@@ -3,29 +3,29 @@ import API from "../../utils/API";
 import NavBar from '../../components/NavBar';
 import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
-import "./inn.css";
+import "./weapon.css";
 
 
-class Inn extends Component {
+class Weapon extends Component {
     state = {
         generate: {
-            href: "/inn",
-            name: "Generate 5 Inns"
+            href: "/weapon",
+            name: "Generate 5 Weapon Names"
         },
         adjs: [],
         nouns: [],
         types: [],
-        innNames: []
+        weaponNames: []
     }
     // When the component mounts retreive all inn arrays
     componentDidMount() {
-        this.loadInn();
+        this.loadWeapon();
 
     }
 
     // Loads all inn arrays to states
-    loadInn = () => {
-        API.getInn()
+    loadWeapon = () => {
+        API.getWeapon()
             .then(response => {
                 this.setState({ adjs: response.data[0].adj });
                 this.setState({ nouns: response.data[0].noun });
@@ -37,7 +37,7 @@ class Inn extends Component {
     generateHandler = (event) => {
         event.preventDefault();
         let generatedName = [];
-        //Generate 5 inn names
+        //Generate 5 weapon names
         let i = 0;
         for (i = 0; i < 5; i++) {
             //pull random adjective
@@ -59,13 +59,13 @@ class Inn extends Component {
 
     render() {
         return (
-            <div className="innGenerator">
+            <div className="weaponGenerator">
                 <NavBar />
-                <h1>Inn Name Generator</h1>
+                <h1>Weapon Name Generator</h1>
                 <List>
-                    {this.state.innNames.map(inn => (
-                        <ListItem key={inn}>
-                            {inn}
+                    {this.state.weaponNames.map(weapon => (
+                        <ListItem key={weapon}>
+                            {weapon}
                         </ListItem>
                     ))}
                 </List>
@@ -75,4 +75,4 @@ class Inn extends Component {
     }
 }
 
-export default Inn;
+export default Weapon;

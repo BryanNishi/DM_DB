@@ -66,7 +66,7 @@ class Land extends Component {
                         </ListItem>
                     ))}
                 </List>
-                <Button clicked={this.generateHandler} name={this.state.generate.name} />
+                <Button onClick={this.generateHandler} name={this.state.generate.name} />
             </div>
         );
     }

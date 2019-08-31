@@ -12,25 +12,25 @@ class Generators extends Component {
             { to: "/name", name: "Character Names" },
             { to: "/land", name: "Land Name" },
             { to: "/inn", name: "Inn/Tavern Name" },
-            { to: "/treasure", name: "Weapon Names" },
-            { to: "/treasure", name: "City/Town Names" },
+            { to: "/weapon", name: "Weapon Names" },
+            { to: "/city", name: "City/Town Names" },
         ],
         itemGen: [
-            { to: "/treasure", name: "Magic Item" },
-            { to: "/treasure", name: "Food" },
-            { to: "/treasure", name: "Treasure Chests" },
-            { to: "/treasure", name: "Loot" },
+            { to: "/magic", name: "Magic Item" },
+            { to: "/food", name: "Food" },
+            { to: "/chest", name: "Treasure Chests" },
+            { to: "/loot", name: "Loot" },
         ],
         worldGen: [
-            { to: "/treasure", name: "Environment Details" },
-            { to: "/treasure", name: "Adventure Hooks" },
-            { to: "/treasure", name: "Rumors" },
-            { to: "/treasure", name: "Traps/Puzzles" },
-            { to: "/treasure", name: "Encounters" },
+            { to: "/environment", name: "Environment Details" },
+            { to: "/hook", name: "Adventure Hooks" },
+            { to: "/rumors", name: "Rumors" },
+            { to: "/traps", name: "Traps/Puzzles" },
+            { to: "/encounter", name: "Encounters" },
             { to: "/dungeon", name: "Dungeon" },
         ],
         miscGen: [
-            { to: "/treasure", name: "Crit Fails" },
+            { to: "/fail", name: "Crit Fails" },
         ]
     }
 

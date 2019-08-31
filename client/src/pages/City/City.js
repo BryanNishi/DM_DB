@@ -3,29 +3,29 @@ import API from "../../utils/API";
 import NavBar from '../../components/NavBar';
 import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
-import "./inn.css";
+import "./city.css";
 
 
-class Inn extends Component {
+class City extends Component {
     state = {
         generate: {
-            href: "/inn",
-            name: "Generate 5 Inns"
+            href: "/city",
+            name: "Generate 5 City Names"
         },
         adjs: [],
         nouns: [],
         types: [],
-        innNames: []
+        cityNames: []
     }
     // When the component mounts retreive all inn arrays
     componentDidMount() {
-        this.loadInn();
+        this.loadCity();
 
     }
 
     // Loads all inn arrays to states
     loadInn = () => {
-        API.getInn()
+        API.getCity()
             .then(response => {
                 this.setState({ adjs: response.data[0].adj });
                 this.setState({ nouns: response.data[0].noun });
@@ -53,19 +53,19 @@ class Inn extends Component {
             generatedName.push(adj + noun + type);
             console.log("generated", generatedName);
             //set state to array of inn names
-            this.setState({ innNames: generatedName })
+            this.setState({ cityNames: generatedName })
         };
     };
 
     render() {
         return (
-            <div className="innGenerator">
+            <div className="cityGenerator">
                 <NavBar />
-                <h1>Inn Name Generator</h1>
+                <h1>City Name Generator</h1>
                 <List>
-                    {this.state.innNames.map(inn => (
-                        <ListItem key={inn}>
-                            {inn}
+                    {this.state.cityNames.map(city => (
+                        <ListItem key={city}>
+                            {city}
                         </ListItem>
                     ))}
                 </List>
@@ -75,4 +75,4 @@ class Inn extends Component {
     }
 }
 
-export default Inn;
+export default City;
