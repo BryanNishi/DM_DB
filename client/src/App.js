@@ -17,6 +17,8 @@ import Dungeon from "./pages/Dungeon";
 import Treasure from "./pages/Treasure";
 import Weapon from "./pages/Weapon";
 import City from "./pages/City";
+import Fail from "./pages/Fail";
+import Trap from "./pages/Trap";
 
 
 
@@ -42,6 +44,8 @@ const App = () => (
       <Route path="/treasure" component={Treasure} />
       <Route path="/weapon" component={Weapon} />
       <Route path="/city" component={City} />
+      <Route path="/fail" component={Fail} />
+      <Route path="/trap" component={Trap} />
     </div>
   </Router>
 );

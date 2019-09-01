@@ -6,4 +6,7 @@ module.exports = {
   Name: require("./Name"),
   Weapon: require("./Weapon"),
   City: require("./City"),
+  Fail: require("./Fail"),
+  Trap: require("./Trap"),
+
 };

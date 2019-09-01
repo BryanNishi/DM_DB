@@ -25,7 +25,7 @@ class Generators extends Component {
             { to: "/environment", name: "Environment Details" },
             { to: "/hook", name: "Adventure Hooks" },
             { to: "/rumors", name: "Rumors" },
-            { to: "/traps", name: "Traps/Puzzles" },
+            { to: "/trap", name: "Traps/Puzzles" },
             { to: "/encounter", name: "Encounters" },
             { to: "/dungeon", name: "Dungeon" },
         ],

@@ -434,7 +434,186 @@ db.City
   .deleteMany({}) //clear out the collection
   .then(() => db.City.collection.insertMany(citySeed)) //re-insert seed
   .then(data => {
-    console.log(data.result.n + " City records inserted!");
+    console.log(data.result.n + " city records inserted!");
+    // process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+
+//**********************Fail Collection */
+const failSeed = [
+  {
+    fail: [
+      'You overextend yourself going for the kill. Your opponent gains advantage on their next attack roll.',
+      'Your weapon gets stuck in your opponent’s shield, armour, hide, or else in a tree or wall, or the ground. Roll a Strength check to see if you can free it using a bonus action. The DC is 8 + your strength modifier.',
+      'You lose your footing. Roll Dexterity / Acrobatics check (DC15) or fall prone. Your turn has ended and melee attacks have advantage on you',
+      'Roll a Constitution Saving Throw DC15 or the strain of your attack causes you to pull a muscle in your upper body. You have disadvantage in attack rolls and ability checks requiring upper body strength until you have completed three long rests, or received magical healing.',
+      'Roll a Constitution Saving Throw DC15 or the strain of combat causes you to pull a muscle in your leg. Your movement is halved, and you lose your dex modifier to AC and initiative, and you have disadvantage on any ability checks that require lower body strength, until you have completed three long rests, or received magical healing.',
+      'Either through fear, excitement or simply needing to go, you soil yourself.',
+      'You lose your combat footing, exposing yourself to your target. Your target has advantage on their first attack roll against you next round.',
+      'You lose your grip as you attack. Roll a DC 10 Dexterity Check, on failure you drop your weapon at your feet.',
+      'Melee: You lunge past an enemy exposing yourself to his attack. Ranged: Your missile startles your allies near your target. Melee: Enemy you were attacking is able to use their reaction to perform and attack of opportunity. Ranged: the target can perform an opportunity attack on any ally within melee range.',
+      'player’s armor becomes unfastened, reducing its AC bonus by 1 until a movement action is taken to fasten it',
+      'player’s coin purse becomes unfastened and spills a number of coins determined by DM',
+      "You don't realize you're in battle. You must take an action to re-ready your weapon, any enemies within range get a opportunity attack.",
+      'You hit yourself, take half damage roll.',
+      'You thought you saw your dad, so you wave. Enemy gets opportunity attack.',
+      'Your enemies pity your failure, and walk away. No one gets any experience, or any treasure. Wounds and used items, still remain however.',
+      'The opponent smacks you. No damage, except for your pride.',
+      'Your character yells out "I think my dice are faulty". No one knows why and odd looks are traded.',
+      'You are teleported to the nearest tavern. The bartender doesnt say anything and just hands you a drink. On the house.',
+      'BEES! everyone on in the battle takes 1d4 of damage.',
+      'You step on the upturned tines of a rake and get whacked in the face by the handle for 1d4.',
+      'The sky opens, unleashing a torrential rain, only on you.',
+    ]
+  }
+];
+
+db.Fail
+  .deleteMany({}) //clear out the collection
+  .then(() => db.Fail.collection.insertMany(failSeed)) //re-insert seed
+  .then(data => {
+    console.log(data.result.n + " Fail records inserted!");
+    // process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+
+
+//**********************Traps Collection */
+const trapsSeed = [
+  {
+    traps: [
+      "Trip wire",
+      "Pressure plate",
+      "Opening a door",
+      'Lifting the lid on a chest',
+      'Grabbing a certain rung of a ladder',
+      'Removing an object from it’s resting place',
+      'Touching anything in the room, including the floor',
+      'Breaking the beam of a light source',
+      'Disturbing a source of water in the room',
+      'Pulling on a suspicious looking rope hanging from the ceiling',
+      'An arcane rune on the floor',
+      'Arcane markings around a door frame',
+      'A pillar that has a low hum to it',
+      'A jeweled eye that scans the room',
+      'Stone statue that has glowing red eyes',
+      'A mysterious green fog that rolls around the base of the room',
+      'A very dimly lit candle that could be extinguished with the faintest breath',
+      'A phrase scrawled on the wall that activates when said out loud',
+      'Failing to cast any spell on a dull crystal floating in the center of the room',
+      'Lighting a rather inviting looking torch in the center of the room',
+    ],
+    tripped: [
+      'A torch is lit in another room, alerting enemies',
+      'A door in another room closes, hiding a secret passage',
+      'Chests in the dungeon lock up',
+      'A dangerous enemy is freed that could normally be avoided',
+      'All other traps that have already been triggered get reset',
+      'All lights are extinguished',
+      'Golems begin patrolling the dungeon',
+      'All doors in the dungeon lock themselves',
+      'An alarm bell begins ringing alerting all enemies of the party',
+      'Another more sinister trap is set in another room',
+      'A low hum is heard',
+      'A very unnatural light begins glowing brightly from an unknown source',
+      'Any runes in the room begin glowing a bright red',
+      'The room suddenly drops drastically in temperature',
+      'The room gets uncomfortably hot',
+      'A soft hiss is heard',
+      'A fizzling sound is heard',
+      'A high pitched hum rings out',
+      'A crackling of energy is heard through the room',
+      'Silence',
+      'Gears can be heard grinding from inside the walls',
+      'A low boom is heard that echoes out through the dungeon',
+      'A high pitched whirring can be heard',
+      'Various ticking sounds are heard',
+      'A quick release of steam followed by a bang',
+      'A low rumbling that shakes the room for a moment',
+      'A single click',
+      'The sound of chains sliding across stone',
+      'A thumping sound that starts slow and begins picking up speed',
+    ],
+    hazard: [
+      'The floor opens downward into a 40 foot pit',
+      'From unseen slits in the wall, poisoned needles fly out',
+      'A wall opens revealing a golem to ambush the party',
+      'A large log swings down from the ceiling',
+      'The parts of the dungeon begin collapsing, blocking off areas',
+      'Vents on the ceiling begin emptying noxious fumes into the room',
+      'A large blade swings horizontally across the room attempting to decapitate',
+      'The room begins filling with water after the doors slam shut',
+      'The walls slowly begin closing inwards',
+      'A large rolling boulder drops from the ceiling towards the party',
+      'Sleep is cast on the room',
+      'Victim must resist being petrified',
+      'A fireball explodes throughout the room',
+      'All surfaces of the room begin to become too hot to touch (Effectively heat metal)',
+      'Fumes begin materializing as if stinking cloud was cast',
+      'A wall of lightning races towards the victim and any others in its way',
+      'All people in the room have blindness cast on them',
+      'The victim is sent to the astral plane for one minute',
+      'Everything in the room begins to levitate, no save',
+      'The spell Confusion is cast on everyone',
+    ],
+    disarm: [
+      'A shallow gutter runs along the far wall, with a loose brick restricting the flow of water through it',
+      'What appears to be a keyhole is discover behind a loose stone',
+      'A rusted and jammed lever is found beneath a discarded pile of clothing',
+      'A row of fake-emerald buttons on the wall, covered in cobwebs',
+      'Three stones are arranged in a circle on a lead pressure plate',
+      'A painting of an octopus is found in a far corner, three of its arms appear depressible',
+      'A foot-long strip of iron is set into the ceiling, with a small magnet at one end',
+      'A small wooden door opens to a panel filled with strange metal gears',
+      'Three tiny brass levers in a hand-sized hole in the floor',
+      'A moldy rope lies on the floor, leading to a pulley lost in the shadows of the ceiling',
+      'Four keyhole sized openings along the bottom of a door',
+      'A magical rune glows red when touched',
+      'A small statuette of an elephant lies beside a small stone pedestal',
+      'A loose block in the ceiling appears to be hooked to a chain above',
+      'Three counterweights hang on ropes just inside the door',
+      'A camouflaged metal door on one wall conceals a copper lever',
+      'A magic mouth appears and demands a password',
+      'Magic runes spell out “Erase Me” with Read Magic',
+      'A statue of a wizened sage has moveable arms',
+      'An abandoned bottle contains a key matching a concealed hole in the wall',
+      'A loose brick has fallen out of the wall and must be replaced',
+      'A ghostly apparition appears and demands a song be sung to him',
+      'A pulley disarms the trap, but the rope is missing',
+      'A empty gourd hangs from a hook on the wall and must be filled with water',
+      'Three couplets of an old poem are scrawled on the wall; the missing couplet must be recited aloud',
+      "A Riddle: As time moves, so it creates. The lessons learned, and the ways of fate. I am each one, and yet still more. All you've known, seen and done before. Tell me, what am I? Answer: Knowledge",
+      "A Riddle:  You can see me in water, but I am never wet. What am I? Answer: Reflection",
+      "A Riddle: What goes up a hill faster than it goes down a hill? Answer: Fire",
+      "A Riddle: When you make a hole in me, I have fewer holes. What am I? Answer: A Net",
+      "A Riddle: What begins and has no end, and ends all things that begin? Answer: Death",
+      "A Riddle: I cannot be measured until I am done, oh but how you will miss me once I am gone. Answer: Lifespan/Time",
+      "A Riddle: Brothers and sisters, I have none. But that man's father is my father's son. Who is he? Answer: My Son",
+      "A Riddle: Iron roof, glass walls, burns and burns but never falls. What am I? Answer: Lantern",
+      "A Riddle: I grow as I eat, but die when I drink, what am I? Answer: Fire",
+      "A Riddle: It cannot be seen, it cannot be felt, Cannot be heard, cannot be smelt, Lies behind stars and under hills, And empty holes it fills. Comes first follows after, Ends life, kills laughter. Answer: Darkness",
+      "A Riddle: Alive without breath, as cold as death, never thirsty, always drinking, all in mail, but never clinking. Answer: A Fish",
+      "A Riddle: In my arms I keep the dead, my presence keeps families fed. I am the base of mortal life. I am the scene of all their strife. Answer: Earth/Ground",
+      "A Riddle: A slave I've been and shall remain. To a cruel mistress I'm tied with invisible chains. Yet I always put on the same brave face. She keeps me her prisoner, but leaves me some space. What am I? Answer: The Moon",
+      "A Riddle: To keep me, I must be given. If I am not kept, I am broken Answer: A Promise",
+      "A Riddle: I do not breathe, but I run and jump. I do not eat, but I swim and stretch. I do not drink, but I sleep and stand. I do not think, but I grow and play. I do not see, but you see me everyday. Answer: A Leg",
+    ]
+  }
+];
+
+db.Trap
+  .deleteMany({}) //clear out the collection
+  .then(() => db.Trap.collection.insertMany(trapsSeed)) //re-insert seed
+  .then(data => {
+    console.log(data.result.n + " Traps records inserted!");
     process.exit(0);
   })
   .catch(err => {

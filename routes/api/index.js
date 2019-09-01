@@ -6,7 +6,9 @@ const treasureRoutes = require("./treasure");
 const nameRoutes = require("./name");
 const weaponRoutes = require("./weapon");
 const cityRoutes = require("./city");
-const userRoutes = require("./user")
+const failRoutes = require("./fail");
+const trapRoutes = require("./trap");
+const userRoutes = require("./user");
 
 
 //Inn Route
@@ -23,6 +25,10 @@ router.use("/name", nameRoutes);
 router.use("/weapon", weaponRoutes);
 //City Route
 router.use("/city", cityRoutes);
+//Fail Route
+router.use("/fail", failRoutes);
+//Trap Route
+router.use("/trap", trapRoutes);
 //User Route
 router.use("/user", userRoutes);
 

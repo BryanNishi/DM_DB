@@ -42,7 +42,12 @@ export default {
   getCity: function () {
     return axios.get("/api/city");
   },
-  
+  getFail: function () {
+    return axios.get("/api/fail");
+  },
+  getTrap: function () {
+    return axios.get("/api/trap");
+  },
 
 };
 

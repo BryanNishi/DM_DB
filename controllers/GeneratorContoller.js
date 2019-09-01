@@ -52,6 +52,22 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
+  //get all fails
+  getFail: function (req, res) {
+    db.Fail
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
+  //get all traps
+  getTrap: function (req, res) {
+    db.Trap
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
   //get user data
   getUsers: function (req, res) {
     db.User
