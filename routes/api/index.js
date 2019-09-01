@@ -4,6 +4,8 @@ const landRoutes = require("./land");
 const dungeonRoutes = require("./dungeon");
 const treasureRoutes = require("./treasure");
 const nameRoutes = require("./name");
+const weaponRoutes = require("./weapon");
+const cityRoutes = require("./city");
 const userRoutes = require("./user")
 
 
@@ -17,6 +19,10 @@ router.use("/dungeon", dungeonRoutes);
 router.use("/treasure", treasureRoutes);
 //Name Route
 router.use("/name", nameRoutes);
+//Weapon Route
+router.use("/weapon", weaponRoutes);
+//City Route
+router.use("/city", cityRoutes);
 //User Route
 router.use("/user", userRoutes);
 

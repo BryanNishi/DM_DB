@@ -36,17 +36,31 @@ module.exports = {
       .find(req.query)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  },  
-
-  //get user data
-  getUsers: function(req, res) {
-    db.User
-    .find(req.query)
-    .then(dbModel => res.json(dbModel))
-    .catch(err => res.status(422).json(err));
+  },
+  //get all weapons
+  getWeapon: function (req, res) {
+    db.Weapon
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  //get all city/towns
+  getCity: function (req, res) {
+    db.City
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   },
 
-  postUser: function(req, res) {    
+  //get user data
+  getUsers: function (req, res) {
+    db.User
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
+  postUser: function (req, res) {
     db.User.create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

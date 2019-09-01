@@ -12,24 +12,19 @@ class City extends Component {
             href: "/city",
             name: "Generate 5 City Names"
         },
-        adjs: [],
-        nouns: [],
-        types: [],
+        dbNames: [],
         cityNames: []
     }
-    // When the component mounts retreive all inn arrays
+    // When the component mounts retreive all city arrays
     componentDidMount() {
         this.loadCity();
-
     }
 
-    // Loads all inn arrays to states
-    loadInn = () => {
+    // Loads all city arrays to states
+    loadCity = () => {
         API.getCity()
             .then(response => {
-                this.setState({ adjs: response.data[0].adj });
-                this.setState({ nouns: response.data[0].noun });
-                this.setState({ types: response.data[0].type });
+                this.setState({ dbNames: response.data[0].city });
             })
             .catch(err => console.log(err));
     };
@@ -37,22 +32,16 @@ class City extends Component {
     generateHandler = (event) => {
         event.preventDefault();
         let generatedName = [];
-        //Generate 5 inn names
+        //Generate 5 city names
         let i = 0;
         for (i = 0; i < 5; i++) {
-            //pull random adjective
-            let adj = "The " + this.state.adjs[Math.floor(Math.random() * this.state.adjs.length)] + " ";
-
-            //pull random noun
-            let noun = this.state.nouns[Math.floor(Math.random() * this.state.nouns.length)] + " ";
-
-            //pull random type
-            let type = this.state.types[Math.floor(Math.random() * this.state.types.length)];
+            //pull random name
+            let cityName = this.state.dbNames[Math.floor(Math.random() * this.state.dbNames.length)];
 
             //send to array
-            generatedName.push(adj + noun + type);
+            generatedName.push(cityName);
             console.log("generated", generatedName);
-            //set state to array of inn names
+            //set state to array of city names
             this.setState({ cityNames: generatedName })
         };
     };

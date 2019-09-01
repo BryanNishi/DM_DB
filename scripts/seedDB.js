@@ -3,6 +3,7 @@ const db = require("../models");
 
 // Empties the db collections and inserts the names below
 //To SEED Heroku/mLab, run in the root folder: '$ heroku run node scripts/seedDB.js'
+// To SEED Local run '$ node seedDB.js' from the scripts folder containing the seed.js file.
 
 mongoose.connect(
   process.env.MONGODB_URI ||
@@ -11,72 +12,72 @@ mongoose.connect(
 
 //**********************Inn Name Collection */
 const innSeed = [{
-    adj: [
-      "Happy",
-      "Sad",
-      "Old",
-      "New",
-      "Jousting",
-      "Salty",
-      "Crusty",
-      "Fighting",
-      "Kneeling",
-      "Sticky",
-      "Starving",
-      "Timid",
-      "Plesant",
-      "New",
-      "Faded",
-      "Plain",
-      "Nifty",
-      "Shattered",
-      "Enchanted",
-      "White",
-      "Black",
-      "Red",
-      "Brown",
-      "Ancient",
-      "Dusty",
-      "Odd",
-      "Cunning",
-      "Flying",
-      "Fine",
-    ],
+  adj: [
+    "Happy",
+    "Sad",
+    "Old",
+    "New",
+    "Jousting",
+    "Salty",
+    "Crusty",
+    "Fighting",
+    "Kneeling",
+    "Sticky",
+    "Starving",
+    "Timid",
+    "Plesant",
+    "New",
+    "Faded",
+    "Plain",
+    "Nifty",
+    "Shattered",
+    "Enchanted",
+    "White",
+    "Black",
+    "Red",
+    "Brown",
+    "Ancient",
+    "Dusty",
+    "Odd",
+    "Cunning",
+    "Flying",
+    "Fine",
+  ],
 
-    noun: [
-      "Artist",
-      "Apostle",
-      "Beast",
-      "Knight",
-      "Beggar",
-      "Fighter",
-      "Fool",
-      "Raccoon",
-      "Lion",
-      "Stone",
-      "Eagle",
-      "Fox",
-      "Throne",
-      "Boulder",
-      "Steed",
-      "Chicken",
-      "Traveler",
-      "Raven",
-      "Demon",
-      "Serpent",
-    ],
+  noun: [
+    "Artist",
+    "Apostle",
+    "Beast",
+    "Knight",
+    "Beggar",
+    "Fighter",
+    "Fool",
+    "Raccoon",
+    "Lion",
+    "Stone",
+    "Eagle",
+    "Fox",
+    "Throne",
+    "Boulder",
+    "Steed",
+    "Chicken",
+    "Traveler",
+    "Raven",
+    "Demon",
+    "Serpent",
+  ],
 
-    type: [
-      "Inn",
-      "Tavern",
-      "Pub",
-      "Bar"
-    ]
-  }];
+  type: [
+    "Inn",
+    "Tavern",
+    "Pub",
+    "Bar"
+  ]
+}];
 
 
 db.Inn
-  .remove({}) //clear out the collection
+  .deleteMany({}) //clear out the collection
   .then(() => db.Inn.collection.insertMany(innSeed)) //re-insert seed
   .then(data => {
     console.log(data.result.n + " Inn records inserted!");
@@ -141,7 +142,7 @@ const landSeed = [
 
 
 db.Land
-  .remove({}) //clear out the collection
+  .deleteMany({}) //clear out the collection
   .then(() => db.Land.collection.insertMany(landSeed)) //re-insert seed
   .then(data => {
     console.log(data.result.n + " Land records inserted!");
@@ -196,7 +197,7 @@ const dungeonSeed = [
 
 
 db.Dungeon
-  .remove({}) //clear out the collection
+  .deleteMany({}) //clear out the collection
   .then(() => db.Dungeon.collection.insertMany(dungeonSeed)) //re-insert seed
   .then(data => {
     console.log(data.result.n + " Dungeon records inserted!");
@@ -233,7 +234,7 @@ const treasureSeed = [
       ]
     }
   },
-  
+
   {
     coins: {
       idividual: [
@@ -245,13 +246,13 @@ const treasureSeed = [
       ]
     },
   },
-  
+
 ];
 
 
 
 db.Treasure
-  .remove({}) //clear out the collection
+  .deleteMany({}) //clear out the collection
   .then(() => db.Treasure.collection.insertMany(treasureSeed)) //re-insert seed
   .then(data => {
     console.log(data.result.n + " Treasure records inserted!");
@@ -263,54 +264,115 @@ db.Treasure
   });
 
 
-  //**********************Name Collection */
+//**********************Name Collection */
 const nameSeed = [
   {
-    Dragonborn : {
+    Dragonborn: {
       male: ["Andujar", "Armagan", "Armek", "Arzan", "Axaran", "Belaxarim", "Brevarr", "Djemidor", "Draxan", "Fayal", "Grax", "Iojad", "Inzul", "Khiraj", "Kreytzen", "Lejek", "Mar", "Nazir", "Nedam", "Nevek", "Ravaran", "Razaan", "Sarax", "Sarram", "Savaxis", "Siangar", "Sirizan", "Sunan", "Szuran", "Tajan", "Tamajon", "Tenahn", "Toxal", "Tzegyr", "Vantajar", "Vharkus", "Xafiq", "Zarkhil"],
       female: ["Artana", "Kalas", "Khagra", "Leytra", "Myrka", "Naya", "Sarcha", "Shirren", "Sirivistra", "Sufana", "Tamara", "Vrumadi", "Zovra", "Arizita", "Xyrinn", "Sosira", "Koqorel", "Nyszita", "Welsifaeth", "Dabith", "Irlywyn", "Nashann", "Zofkira"]
     },
-    Dwarf:{
-      male:["Agaro", "Arnan", "Auxlan", "Avamir", "Baelnar", "Balfam", "Bariken", "Borkûl", "Darkûl", "Dolmen", "Dyrnar", "Erag", "Ezegan", "Ferrek", "Garmûl", "Glint", "Ghorvas", "Grimmalk", "Haeltar", "Halagmar", "Halzar", "Hlant", "Korlag", "Krag", "Krim", "Kurman", "Lurtrum", "Malagar", "Mardam", "Maulnar", "Melgar", "Morak", "Orobok", "Rogath", "Roken", "Rozag", "Sabakzar", "Sharak", "Smethykk", "Swargar", "Thorbalt", "Thorin", "Tredigar", "Vabûl", "Vistrum", "Wolvar"],
-      female:["Beyla", "Fenryl", "Grenenzel", "Krystolari", "Lokara", "Lurka", "Marnia", "Praxana", "Rokel", "Roksana", "Thurlfara", "Vauldra", "Veklani", "Vronwe", "Zebel", "Kathvia", "Ranmyl", "Nissyl", "Katnia", "Artin", "Baermora", "Redmera", "Belgwyn", "Brynbera", "Redryl"]
+    Dwarf: {
+      male: ["Agaro", "Arnan", "Auxlan", "Avamir", "Baelnar", "Balfam", "Bariken", "Borkûl", "Darkûl", "Dolmen", "Dyrnar", "Erag", "Ezegan", "Ferrek", "Garmûl", "Glint", "Ghorvas", "Grimmalk", "Haeltar", "Halagmar", "Halzar", "Hlant", "Korlag", "Krag", "Krim", "Kurman", "Lurtrum", "Malagar", "Mardam", "Maulnar", "Melgar", "Morak", "Orobok", "Rogath", "Roken", "Rozag", "Sabakzar", "Sharak", "Smethykk", "Swargar", "Thorbalt", "Thorin", "Tredigar", "Vabûl", "Vistrum", "Wolvar"],
+      female: ["Beyla", "Fenryl", "Grenenzel", "Krystolari", "Lokara", "Lurka", "Marnia", "Praxana", "Rokel", "Roksana", "Thurlfara", "Vauldra", "Veklani", "Vronwe", "Zebel", "Kathvia", "Ranmyl", "Nissyl", "Katnia", "Artin", "Baermora", "Redmera", "Belgwyn", "Brynbera", "Redryl"]
     },
-    Elf:{
-      male:["Alarcion", "Alathar", "Ariandar", "Arromar", "Borel", "Bvachan", "Carydion", "Elgoth", "Farlien", "Ferel", "Gaerlan", "Iafalior", "Kaelthorn", "Laethan", "Leliar", "Leodor", "Lorak", "Lorifir", "Morian", "Oleran", "Rylef", "Savian", "Seylas", "Tevior", "Veyas"],
-      female:["Aryllan", "Atalya", "Ayrthwil", "Irva", "Lyfalia", "Ronefel", "Thirya", "Velene", "Venefiq", "Zereni", "Olajyre", "Miaroris", "Yllalee", "Origwyn", "Syltris", "Xyrbanise", "Krisxisys", "Liakalyn", "Zylfiel", "Chaemys"]
+    Elf: {
+      male: ["Alarcion", "Alathar", "Ariandar", "Arromar", "Borel", "Bvachan", "Carydion", "Elgoth", "Farlien", "Ferel", "Gaerlan", "Iafalior", "Kaelthorn", "Laethan", "Leliar", "Leodor", "Lorak", "Lorifir", "Morian", "Oleran", "Rylef", "Savian", "Seylas", "Tevior", "Veyas"],
+      female: ["Aryllan", "Atalya", "Ayrthwil", "Irva", "Lyfalia", "Ronefel", "Thirya", "Velene", "Venefiq", "Zereni", "Olajyre", "Miaroris", "Yllalee", "Origwyn", "Syltris", "Xyrbanise", "Krisxisys", "Liakalyn", "Zylfiel", "Chaemys"]
     },
-    Gnome:{
-      male:["Alston", "Alvyn", "Boddynock", "Brocc", "Burgell", "Dimble", "Eldon", "Erky", "Fonkin", "Frug", "Gerbo", "Gimble", "Glim", "Jebeddo", "Kellen", "Namfoodle", "Orryn", "Roondar", "Seebo", "Sindri", "Warryn", "Wrenn", "Zook"],
-      female:["Bimpnottin", "Breena", "Caramip", "Carlin", "Donella", "Duvamil", "Ella", "Ellyjobell", "Ellywick", "Lilli", "Loopmottin", "Lorilla", "Mardnab", "Nissa", "Nyx", "Oda", "Orla", "Roywyn", "Shamil", "Tana", "Waywocket", "Zanna"]
+    Gnome: {
+      male: ["Alston", "Alvyn", "Boddynock", "Brocc", "Burgell", "Dimble", "Eldon", "Erky", "Fonkin", "Frug", "Gerbo", "Gimble", "Glim", "Jebeddo", "Kellen", "Namfoodle", "Orryn", "Roondar", "Seebo", "Sindri", "Warryn", "Wrenn", "Zook"],
+      female: ["Bimpnottin", "Breena", "Caramip", "Carlin", "Donella", "Duvamil", "Ella", "Ellyjobell", "Ellywick", "Lilli", "Loopmottin", "Lorilla", "Mardnab", "Nissa", "Nyx", "Oda", "Orla", "Roywyn", "Shamil", "Tana", "Waywocket", "Zanna"]
     },
-    Half_Elf:{
-      male:["Aseir", "Bardeid", "Haseid", "Khemed", "Mehmen", "Sudeiman", "Zasheir", "Darvin", "Dorn", "Evendur", "Gorstag", "Grim", "Helm", "Malark", "Morn", "Randal", "Stedd", "Bor", "Fodel", "Glar", "Grigor", "Igan", "Ivor", "Kosef", "Mival", "Orel", "Pavel", "Sergor"],
-      female:["Atala", "Ceidil", "Hama", "Jasmal", "Meilil", "Seipora", "Yasheira", "Zasheida", "Arveene", "Esvele", "Jhessail", "Kerri", "Lureene", "Miri", "Rowan", "Shandri", "Tessele", "Alethra", "Kara", "Katernin", "Mara", "Natali", "Olma", "Tana", "Zora"]
+    Half_Elf: {
+      male: ["Aseir", "Bardeid", "Haseid", "Khemed", "Mehmen", "Sudeiman", "Zasheir", "Darvin", "Dorn", "Evendur", "Gorstag", "Grim", "Helm", "Malark", "Morn", "Randal", "Stedd", "Bor", "Fodel", "Glar", "Grigor", "Igan", "Ivor", "Kosef", "Mival", "Orel", "Pavel", "Sergor"],
+      female: ["Atala", "Ceidil", "Hama", "Jasmal", "Meilil", "Seipora", "Yasheira", "Zasheida", "Arveene", "Esvele", "Jhessail", "Kerri", "Lureene", "Miri", "Rowan", "Shandri", "Tessele", "Alethra", "Kara", "Katernin", "Mara", "Natali", "Olma", "Tana", "Zora"]
     },
-    Half_Orc:{
-      male:["Dench", "Feng", "Gell", "Henk", "Holg", "Imsh", "Keth", "Krusk", "Mhurren", "Ront", "Shump", "Thokk", "Mogudurk", "Trukamak", "Belorash", "Ullogall", "Zasebur", "Asadark", "Ukegar", "Zavid", "Sorubak", "Brakumash"],
-      female:["Baggi", "Emen", "Engong", "Kansif", "Myev", "Neega", "Ovak", "Ownka", "Shautha", "Sutha", "Vola", "Volen", "Yevelda", "Rasagur", "Zenogri", "Goranir", "Kerugh", "Garud", "Puyizira", "Rahkone", "Rohkemar", "Lagirook", "Tamume"]
+    Half_Orc: {
+      male: ["Dench", "Feng", "Gell", "Henk", "Holg", "Imsh", "Keth", "Krusk", "Mhurren", "Ront", "Shump", "Thokk", "Mogudurk", "Trukamak", "Belorash", "Ullogall", "Zasebur", "Asadark", "Ukegar", "Zavid", "Sorubak", "Brakumash"],
+      female: ["Baggi", "Emen", "Engong", "Kansif", "Myev", "Neega", "Ovak", "Ownka", "Shautha", "Sutha", "Vola", "Volen", "Yevelda", "Rasagur", "Zenogri", "Goranir", "Kerugh", "Garud", "Puyizira", "Rahkone", "Rohkemar", "Lagirook", "Tamume"]
     },
-    Halfling:{
-      male:["Alton", "Ander", "Cade", "Corrin", "Eldon", "Errich", "Finnan", "Garret", "Lindal", "Lyle", "Merric", "Milo", "Osborn", "Perrin", "Reed", "Roscoe", "Wellby","Arthan", "Carvin", "Corby", "Cullen", "Egen", "Ernest", "Gedi", "Heron", "Jeryl", "Keffen", "Kylem", "Kynt", "Leskyn", "Neff", "Orne", "Quarrel", "Rabbit", "Rilkin", "Snakebait", "Tarfen", "Titch", "Tuck", "Whim"],
-      female:["Caliope", "Emily", "Piper", "Rixi", "Sabretha", "Teg", "Tilly", "Toira", "Vexia", "Vil", "Vzani", "Zanthe", "Ziza", "Andry", "Bree", "Callie", "Cora", "Euphemia", "Jillian", "Kithri", "Lavinia", "Lidda", "Merla", "Nedda", "Paela", "Portia", "Seraphina", "Shaena", "Trym", "Vani", "Verna"]
+    Halfling: {
+      male: ["Alton", "Ander", "Cade", "Corrin", "Eldon", "Errich", "Finnan", "Garret", "Lindal", "Lyle", "Merric", "Milo", "Osborn", "Perrin", "Reed", "Roscoe", "Wellby", "Arthan", "Carvin", "Corby", "Cullen", "Egen", "Ernest", "Gedi", "Heron", "Jeryl", "Keffen", "Kylem", "Kynt", "Leskyn", "Neff", "Orne", "Quarrel", "Rabbit", "Rilkin", "Snakebait", "Tarfen", "Titch", "Tuck", "Whim"],
+      female: ["Caliope", "Emily", "Piper", "Rixi", "Sabretha", "Teg", "Tilly", "Toira", "Vexia", "Vil", "Vzani", "Zanthe", "Ziza", "Andry", "Bree", "Callie", "Cora", "Euphemia", "Jillian", "Kithri", "Lavinia", "Lidda", "Merla", "Nedda", "Paela", "Portia", "Seraphina", "Shaena", "Trym", "Vani", "Verna"]
     },
-    Human:{
-      male:["StrAnlow", "Arando", "Bram", "Cale", "Dalkon", "Daylen", "Dodd", "Dungarth", "Dyrk", "Eandro", "Falken", "Feck", "Fenton", "Gryphero", "Hagar", "Jeras", "Krynt", "Lavant", "Leyten", "Madian", "Malfier", "Markus", "Meklan", "Namen", "Navaren", "Nerle", "Nilus", "Ningyan", "Norris", "Quentin", "Semil", "Sevenson", "Steveren", "Talfen", "Tamond", "Taran", "Tavon", "Tegan", "Vanan", "Vincenting"],
-      female:["Azura", "Brey", "Hallan", "Kasaki", "Lorelei", "Mirabel", "Pharana", "Remora", "Rosalyn", "Sachil", "Saidi", "Tanika", "Tura", "Tylsa", "Vencia", "Xandrilla", "Shezinol", "Zepel", "Luzulsi", "Elsul", "Tenni", "Nah", "Holgoge", "Lolgoy", "Ivory", "Lizhiphe", "Chesa"]
+    Human: {
+      male: ["StrAnlow", "Arando", "Bram", "Cale", "Dalkon", "Daylen", "Dodd", "Dungarth", "Dyrk", "Eandro", "Falken", "Feck", "Fenton", "Gryphero", "Hagar", "Jeras", "Krynt", "Lavant", "Leyten", "Madian", "Malfier", "Markus", "Meklan", "Namen", "Navaren", "Nerle", "Nilus", "Ningyan", "Norris", "Quentin", "Semil", "Sevenson", "Steveren", "Talfen", "Tamond", "Taran", "Tavon", "Tegan", "Vanan", "Vincenting"],
+      female: ["Azura", "Brey", "Hallan", "Kasaki", "Lorelei", "Mirabel", "Pharana", "Remora", "Rosalyn", "Sachil", "Saidi", "Tanika", "Tura", "Tylsa", "Vencia", "Xandrilla", "Shezinol", "Zepel", "Luzulsi", "Elsul", "Tenni", "Nah", "Holgoge", "Lolgoy", "Ivory", "Lizhiphe", "Chesa"]
     },
-    Tiefling:{
-      male:["Akmenos", "Amnon", "Barakas", "Damakos", "Ekemon", "Iados", "Kairon", "Leucis", "Melech", "Mordai", "Morthos", "Pelaios", "Skamos", "Therai", "Arkrut", "Kaiichar", "Akxus", "Gumus", "Skathus", "Kilakas", "Kilxik", "Skaxes", "Aetron", "Aetron", "Xarilius"],
-      female:["Akta", "Anakis", "Bryseis", "Criella", "Damaia", "Ea", "Kallista", "Lerissa", "Makaria", "Nemeia", "Orianna", "Phelaia", "Rieta", "Levnirith", "Afspira", "Yucyra", "Grigrea", "Mithlaia", "Orilies", "Diseis", "Afwure", "Nithza", "Shahala", "Sarrissa"]
+    Tiefling: {
+      male: ["Akmenos", "Amnon", "Barakas", "Damakos", "Ekemon", "Iados", "Kairon", "Leucis", "Melech", "Mordai", "Morthos", "Pelaios", "Skamos", "Therai", "Arkrut", "Kaiichar", "Akxus", "Gumus", "Skathus", "Kilakas", "Kilxik", "Skaxes", "Aetron", "Aetron", "Xarilius"],
+      female: ["Akta", "Anakis", "Bryseis", "Criella", "Damaia", "Ea", "Kallista", "Lerissa", "Makaria", "Nemeia", "Orianna", "Phelaia", "Rieta", "Levnirith", "Afspira", "Yucyra", "Grigrea", "Mithlaia", "Orilies", "Diseis", "Afwure", "Nithza", "Shahala", "Sarrissa"]
     }
   }
 ];
 
 db.Name
-  .remove({}) //clear out the collection
+  .deleteMany({}) //clear out the collection
   .then(() => db.Name.collection.insertMany(nameSeed)) //re-insert seed
   .then(data => {
     console.log(data.result.n + " Name records inserted!");
-    process.exit(0);
+    // process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+//**********************Weapon Name Collection */
+const weaponSeed = [
+  {
+    name: [
+      "Oracle",
+      "Darkness",
+      "Harbinger",
+      "Thunderstorm",
+      "Reaver",
+      "Relentless",
+      "Hurricanne",
+      "Devotion",
+      "Ivory",
+      "Spellbinder",
+      "Stormrage",
+      "Blight",
+      "Daughtbane",
+      "Wizardsbane",
+      "Lifebinder",
+      "Desolation",
+      "Mercy",
+      "Windweaver",
+      "Earthshadow",
+      "Soulkeeper",
+      "Silversoul",
+      "Lightbane",
+      "Midnight",
+      "Dawn's Light",
+      "Crucifier",
+      "Netherbane",
+      "Father's Hope",
+      "Journey's End",
+      "Starlight",
+      "Willbreaker",
+      "Kindness",
+      "Chancellor",
+      "Frostward",
+      "Eclipse",
+      "Amnesia",
+      "Stardust",
+      "Silverglow",
+      "Dreamshadow",
+      "Shadowfeather",
+    ]
+  }
+];
+
+
+
+db.Weapon
+  .deleteMany({}) //clear out the collection
+  .then(() => db.Weapon.collection.insertMany(weaponSeed)) //re-insert seed
+  .then(data => {
+    console.log(data.result.n + " Weapon records inserted!");
+    // process.exit(0);
   })
   .catch(err => {
     console.error(err);
@@ -318,4 +380,64 @@ db.Name
   });
 
 
-  
+//**********************City/Town Name Collection */
+const citySeed = [
+  {
+    city: [
+      "Cragbell",
+      "Oldfall",
+      "Clearreach",
+      "Cavespell",
+      "Grasscliff",
+      'Swiftpost',
+      "Dirtshade",
+      "Highlight",
+      "Lostvein",
+      "Westband",
+      'Crystalmeadow',
+      'Laststorm',
+      'Sunmount',
+      'Basintide',
+      'Bearfair',
+      'Bayguard',
+      'Darkmond',
+      'Spiritharbor',
+      'Darkbay',
+      'Spiritrock',
+      'Freyside',
+      'Dragonkeep',
+      'Deadhallow',
+      'Oakenreach',
+      'Dawnyard',
+      'Iceguard',
+      'Sleethost',
+      'Dewstall',
+      'Hollowshire',
+      'Dirtwood',
+      'Midfort',
+      'Pinefort',
+      'Dragonspell',
+      'Clayhost',
+      'Wildhost',
+      'Southbarrow',
+      'Rageburgh',
+      'Eastvault',
+      'Basinrock',
+      'Coldcross',
+    ]
+  }
+];
+
+
+
+db.City
+  .deleteMany({}) //clear out the collection
+  .then(() => db.City.collection.insertMany(citySeed)) //re-insert seed
+  .then(data => {
+    console.log(data.result.n + " City records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });

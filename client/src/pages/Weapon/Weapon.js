@@ -12,24 +12,19 @@ class Weapon extends Component {
             href: "/weapon",
             name: "Generate 5 Weapon Names"
         },
-        adjs: [],
-        nouns: [],
-        types: [],
+        dbNames: [],
         weaponNames: []
     }
-    // When the component mounts retreive all inn arrays
+    // When the component mounts retreive all weapon arrays
     componentDidMount() {
         this.loadWeapon();
-
     }
 
-    // Loads all inn arrays to states
+    // Loads all weapon arrays to states
     loadWeapon = () => {
         API.getWeapon()
             .then(response => {
-                this.setState({ adjs: response.data[0].adj });
-                this.setState({ nouns: response.data[0].noun });
-                this.setState({ types: response.data[0].type });
+                this.setState({ dbNames: response.data[0].name });
             })
             .catch(err => console.log(err));
     };
@@ -40,20 +35,14 @@ class Weapon extends Component {
         //Generate 5 weapon names
         let i = 0;
         for (i = 0; i < 5; i++) {
-            //pull random adjective
-            let adj = "The " + this.state.adjs[Math.floor(Math.random() * this.state.adjs.length)] + " ";
-
-            //pull random noun
-            let noun = this.state.nouns[Math.floor(Math.random() * this.state.nouns.length)] + " ";
-
-            //pull random type
-            let type = this.state.types[Math.floor(Math.random() * this.state.types.length)];
+            //pull random name
+            let weaponName = this.state.dbNames[Math.floor(Math.random() * this.state.dbNames.length)];
 
             //send to array
-            generatedName.push(adj + noun + type);
+            generatedName.push(weaponName);
             console.log("generated", generatedName);
-            //set state to array of inn names
-            this.setState({ innNames: generatedName })
+            //set state to array of weapon names
+            this.setState({ weaponNames: generatedName })
         };
     };
 
