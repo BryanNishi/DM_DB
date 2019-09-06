@@ -26,7 +26,9 @@ class Generators extends Component {
             { to: "/hook", name: "Adventure Hooks" },
             { to: "/rumors", name: "Rumors" },
             { to: "/trap", name: "Traps/Puzzles" },
-            { to: "/encounter", name: "Encounters" },
+            { to: "/long", name: "Long Rest Encounters" },
+            { to: "/encounter", name: "Travel Encounters" },
+            { to: "/combat", name: "Combat Encounters" },
             { to: "/dungeon", name: "Dungeon" },
         ],
         miscGen: [
@@ -94,6 +96,12 @@ class Generators extends Component {
                     <div className="miscButtons">
                         <h3>Misc Generators</h3>
                         {miscButtons}
+                    </div>
+                    <div className="miscButtons">
+                        <h3>External Generator Links</h3>
+                        <a href="http://tools.goblinist.com/5enc" target="_blank" rel="noopener"><button>Encounter Generator</button></a>
+                        <a href="https://www.fantasynamegenerators.com/" target="_blank" rel="noopener"><button>Fantasy Name Generator</button></a>
+                        <a href="https://donjon.bin.sh/5e/magic/shop.html" target="_blank" rel="noopener"><button>Magic Shop Generator</button></a>
                     </div>
                 </div>
             </div>

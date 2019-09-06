@@ -23,7 +23,7 @@ const About = (props) => {
             </div>
             <h3>All data is stored locally to your machine, no login required.</h3>
             <h2>Clearing your cache will delete your info!</h2>
-            <h3>Version 0.2</h3>
+            <h3>Version 0.2.1</h3>
             <Footer />
         </div>
     )

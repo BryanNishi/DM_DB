@@ -8,5 +8,6 @@ module.exports = {
   City: require("./City"),
   Fail: require("./Fail"),
   Trap: require("./Trap"),
+  Chest: require("./Chest"),
 
 };

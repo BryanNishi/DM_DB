@@ -18,7 +18,18 @@ import Treasure from "./pages/Treasure";
 import Weapon from "./pages/Weapon";
 import City from "./pages/City";
 import Fail from "./pages/Fail";
+import Chest from "./pages/Chest";
+import Combat from "./pages/Combat";
+import Encounter from "./pages/Encounter";
+import Environment from "./pages/Environment";
+import Food from "./pages/Food";
+import Hook from "./pages/Hook";
+import Long from "./pages/Long";
+import Magic from "./pages/Magic";
+import Rumors from "./pages/Rumors";
+import Loot from "./pages/Loot";
 import Trap from "./pages/Trap";
+
 
 
 
@@ -46,6 +57,16 @@ const App = () => (
       <Route path="/city" component={City} />
       <Route path="/fail" component={Fail} />
       <Route path="/trap" component={Trap} />
+      <Route path="/chest" component={Chest} />
+      <Route path="/combat" component={Combat} />
+      <Route path="/encounter" component={Encounter} />
+      <Route path="/environment" component={Environment} />
+      <Route path="/food" component={Food} />
+      <Route path="/hook" component={Hook} />
+      <Route path="/long" component={Long} />
+      <Route path="/magic" component={Magic} />
+      <Route path="/rumors" component={Rumors} />
+      <Route path="/loot" component={Loot} />
     </div>
   </Router>
 );

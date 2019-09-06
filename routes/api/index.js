@@ -8,6 +8,7 @@ const weaponRoutes = require("./weapon");
 const cityRoutes = require("./city");
 const failRoutes = require("./fail");
 const trapRoutes = require("./trap");
+const chestRoutes = require("./chest");
 const userRoutes = require("./user");
 
 
@@ -29,6 +30,8 @@ router.use("/city", cityRoutes);
 router.use("/fail", failRoutes);
 //Trap Route
 router.use("/trap", trapRoutes);
+//Chest Route
+router.use("/chest", chestRoutes);
 //User Route
 router.use("/user", userRoutes);
 

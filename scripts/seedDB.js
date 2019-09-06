@@ -450,22 +450,22 @@ const failSeed = [
       'You overextend yourself going for the kill. Your opponent gains advantage on their next attack roll.',
       'Your weapon gets stuck in your opponent’s shield, armour, hide, or else in a tree or wall, or the ground. Roll a Strength check to see if you can free it using a bonus action. The DC is 8 + your strength modifier.',
       'You lose your footing. Roll Dexterity / Acrobatics check (DC15) or fall prone. Your turn has ended and melee attacks have advantage on you',
-      'Roll a Constitution Saving Throw DC15 or the strain of your attack causes you to pull a muscle in your upper body. You have disadvantage in attack rolls and ability checks requiring upper body strength until you have completed three long rests, or received magical healing.',
-      'Roll a Constitution Saving Throw DC15 or the strain of combat causes you to pull a muscle in your leg. Your movement is halved, and you lose your dex modifier to AC and initiative, and you have disadvantage on any ability checks that require lower body strength, until you have completed three long rests, or received magical healing.',
+      'Roll a Constitution Saving Throw DC15 or the strain of your attack causes you to pull a muscle in your upper body. You have disadvantage on attacks/checks requiring upper body strength until you have completed a long rest, or received magical healing.',
+      'Roll a Constitution Saving Throw DC15 or the strain of combat causes you to pull a muscle in your lower body. You have disadvantage on attacks/checks that require lower body strength, until you have completed a long rest, or received magical healing.',
       'Either through fear, excitement or simply needing to go, you soil yourself.',
       'You lose your combat footing, exposing yourself to your target. Your target has advantage on their first attack roll against you next round.',
       'You lose your grip as you attack. Roll a DC 10 Dexterity Check, on failure you drop your weapon at your feet.',
       'Melee: You lunge past an enemy exposing yourself to his attack. Ranged: Your missile startles your allies near your target. Melee: Enemy you were attacking is able to use their reaction to perform and attack of opportunity. Ranged: the target can perform an opportunity attack on any ally within melee range.',
       'player’s armor becomes unfastened, reducing its AC bonus by 1 until a movement action is taken to fasten it',
-      'player’s coin purse becomes unfastened and spills a number of coins determined by DM',
+      'player’s coin purse becomes unfastened and spills 1d20 of coins.',
       "You don't realize you're in battle. You must take an action to re-ready your weapon, any enemies within range get a opportunity attack.",
       'You hit yourself, take half damage roll.',
-      'You thought you saw your dad, so you wave. Enemy gets opportunity attack.',
+      'You thought you saw your dad; so you wave. Target gets opportunity attack.',
       'Your enemies pity your failure, and walk away. No one gets any experience, or any treasure. Wounds and used items, still remain however.',
-      'The opponent smacks you. No damage, except for your pride.',
-      'Your character yells out "I think my dice are faulty". No one knows why and odd looks are traded.',
-      'You are teleported to the nearest tavern. The bartender doesnt say anything and just hands you a drink. On the house.',
-      'BEES! everyone on in the battle takes 1d4 of damage.',
+      'The opponent slaps you. No damage, except for your pride.',
+      'Your character yells out "Aw cmon dice, roll higher." No one knows why and odd looks are traded.',
+      'You are teleported to the nearest tavern. The bartender doesnt say anything and just hands you a drink.',
+      'BEES! Everyone in the battle takes 1d4 of damage.',
       'You step on the upturned tines of a rake and get whacked in the face by the handle for 1d4.',
       'The sky opens, unleashing a torrential rain, only on you.',
     ]
@@ -614,6 +614,107 @@ db.Trap
   .then(() => db.Trap.collection.insertMany(trapsSeed)) //re-insert seed
   .then(data => {
     console.log(data.result.n + " Traps records inserted!");
+    // process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+
+//**********************Chests Collection */
+const chestSeed = [
+  {
+    style: [
+      "Crude",
+      "Standard",
+      "Fancy",
+      "Elven",
+      "Bejeweled",
+      "Draconic",
+      "Dwarven",
+      "Pirate",
+      "Creepy",
+      "Heavy Duty",
+    ],
+    material: [
+      "Old, rotting wood",
+      "Sturdy Wood",
+      "Iron",
+      "Steel",
+      "Bone",
+      "Obsidian",
+      "Glass",
+      "Ice",
+      "Silver",
+      "Gold",
+    ],
+    trim: [
+      "Iron",
+      "Steel",
+      "Brass",
+      "Silver",
+      "Gold",
+      "Bronze",
+      "Ebony",
+      "Leather",
+      "Wood",
+      "Mithril",
+      "Adamantite",
+      "Dragon Leather",
+    ],
+    decor: [
+      "Artistic Scrollwork",
+      "Tree Pattern",
+      "Dwarven Runes",
+      "Elvish Script",
+      "Lion emblem",
+      "Carving of a Dragon",
+      "Decorative skull",
+      "Glowing Crystals",
+      "Mystic Sigils",
+      "Staring Eyes",
+      "Claw-like feet",
+      "Bas-relief of a battle",
+    ],
+    trap: [
+      "Poison Dart",
+      "Arrow",
+      "Small explosion",
+      "Alarm",
+      "Pit trap",
+      "Boulder Trap",
+      "Heavy Blade",
+      "Spears",
+      "Water fills room",
+      "Sand fills room",
+      "Poison gas",
+      "Random Spell",
+    ],
+    lock: [
+      "Padlock",
+      "Internal mechanism",
+      "Combination",
+      "Puzzle Lock",
+      "Password",
+      "Hidden lock mechanism",
+    ],
+    key: [
+      "Hidden in same room",
+      "Plain sight",
+      "On guardian",
+      "Another room",
+      "Held by owner",
+      "Lost",
+    ],
+  }
+];
+
+db.Chest
+  .deleteMany({}) //clear out the collection
+  .then(() => db.Chest.collection.insertMany(chestSeed)) //re-insert seed
+  .then(data => {
+    console.log(data.result.n + " Chest records inserted!");
     process.exit(0);
   })
   .catch(err => {

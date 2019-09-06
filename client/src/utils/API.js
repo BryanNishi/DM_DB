@@ -48,6 +48,36 @@ export default {
   getTrap: function () {
     return axios.get("/api/trap");
   },
+  getCombat: function () {
+    return axios.get("/api/combat");
+  },
+  getEncounter: function () {
+    return axios.get("/api/encounter");
+  },
+  getEnvironment: function () {
+    return axios.get("/api/environment");
+  },
+  getFood: function () {
+    return axios.get("/api/food");
+  },
+  getHook: function () {
+    return axios.get("/api/hook");
+  },
+  getLong: function () {
+    return axios.get("/api/long");
+  },
+  getLoot: function () {
+    return axios.get("/api/loot");
+  },
+  getMagic: function () {
+    return axios.get("/api/magic");
+  },
+  getRumors: function () {
+    return axios.get("/api/rumors");
+  },
+  getChest: function () {
+    return axios.get("/api/chest");
+  },
 
 };
 
