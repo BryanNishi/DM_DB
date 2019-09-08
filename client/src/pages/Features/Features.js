@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import NavBar from '../../components/NavBar';
-import "./features.css";
+import Button from '../../components/Button';
 import API from '../../utils/API';
 import $ from 'jquery';
-//import { Button, Form, FormGroup, Label, Input, Row, Col, Jumbotron } from 'reactstrap';
+import "./features.css";
 
 class Feature extends Component {
 
@@ -27,23 +27,9 @@ class Feature extends Component {
                 let choice = $("#featureSearch").val();
 
                 this.featureSearch(choice);
-
             }
         });
-
     }
-
-    // handle = event => {
-    //     let buttonClicked = event.which || event.keyCode;        
-
-    //     if (buttonClicked === 13) {
-    //         event.preventDefault();
-    //         let choice = $("#featureSearch").val();
-
-    //         this.featureSearch(choice);
-
-    //     }
-    // }
 
     selectFeature = event => {
         console.log(event.target.value);
@@ -58,45 +44,28 @@ class Feature extends Component {
         }
     }
 
-
     submitSearch = event => {
         event.preventDefault();
-
         let choice = $("#featureSearch").val();
-
         this.featureSearch(choice);
-
     }
 
     featureSearch = choice => {
         console.log(choice);
-
         console.log(this.state.featureList.indexOf(choice));
-
         let featureIndex = this.state.featureList.indexOf(choice);
-
         if (featureIndex !== -1) {
-
-
-
             API.getfeature(featureIndex + 1)
                 .then(res => {
-
                     this.setState({
                         searchResults: res.data
                     });
-
                     console.log(this.state.searchResults);
-
                 });
-
-
         } else {
             $("#noResults").html("No Results Found").css({ "color": "red" });
             this.setState({ searchResults: [] });
-
         }
-
     }
 
     render() {
@@ -104,100 +73,42 @@ class Feature extends Component {
             <div className="featureBody">
                 <NavBar />
                 <h1>Feature Search</h1>
-
-                {/* <Form>
-
-                    <Row>
-                        <Row>
-                            <Col md="3">
-                                <FormGroup>
-
-                                    <Input list="browsers" name="browser" id="featureSearch" className="form-control" placeholder="Search Feature Library" onSelect={this.selectFeature.bind(this)} />
-
-                                    <datalist id="browsers">
-
-                                        {this.state.featureList.map((feature, index) => <option key={index} value={feature} />)}
-
-                                    </datalist>
-
-                                    <Button onClick={this.submitSearch} >Search</Button>
-
-                                </FormGroup>
-                            </Col>
-
-                            <Col md="9">
-                            </Col>
-
-
-                        </Row>
-                    </Row>
-                </Form> */}
-
+                <div className=" d-flex justify-content-center">
+                    <form>
+                        <input list="browsers" name="browser" id="featureSearch" className="form-control" placeholder="Search Feature Library" onSelect={this.selectFeature.bind(this)} />
+                        <datalist id="browsers">
+                            {this.state.featureList.map((feature, index) => <option key={index} value={feature} />)}
+                        </datalist>
+                        <center>
+                            <Button id="spellSubmit" type="submit" onClick={this.submitSearch} name="Search" />
+                            <Button id="spellClear" type="submit" name="Clear" />
+                        </center>
+                    </form>
+                </div>
                 <div className="row">
-                    <div className="col-md-3">
-                        <form>
-
-                            <input list="browsers" name="browser" id="featureSearch" className="form-control" placeholder="Search Feature Library" onSelect={this.selectFeature.bind(this)} />
-
-                            <datalist id="browsers">
-
-                                {this.state.featureList.map((feature, index) => <option key={index} value={feature} />)}
-
-                            </datalist>
-                            <center>
-                                <a className="btn create-btn" role="button" id="featureSubmit" onClick={this.submitSearch}>Search</a>
-                            </center>
-                        </form>
-
-                    </div>
-
-                    <div className="col-md-9">
+                    <div className="col-md-12">
                         {this.state.searchResults.name ? (
                             <div className="scroll">
-
-
-                                <div className="row spellTable">
-                                    <div className="col-sm-4">
-
+                                <div className="row justify-content-around spellTable">
+                                    <div className="col-sm-4 mainStats">
                                         <strong>Name:</strong> {this.state.searchResults.name}<br />
                                         <strong>Level:</strong> {this.state.searchResults.level ? this.state.searchResults.level : "N/A"}<br />
-
-
-
                                     </div>
-
-                                    <div className="col-sm-8">
+                                    <div className="col-sm-7 description">
                                         <strong>Description:</strong>
                                         {this.state.searchResults.desc.map((desc, index) => <span key={index}> {desc} <br /> </span>)}
-
                                     </div>
-
-
                                 </div>
-
                             </div>
 
                         ) : <div>
                                 <h3 id="noResults">No Search Results Available</h3>
                             </div>
-
                         }
-
                     </div>
-
-
                 </div>
-
-
-
-
-
-
-
-
-
             </div>
-        )
+        );
     }
 }
 

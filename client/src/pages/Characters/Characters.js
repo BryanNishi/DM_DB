@@ -11,7 +11,7 @@ class Characters extends Component {
         generators: [
             { to: "/advcharacter", name: "Character Creator" },
             { to: "/name", name: "Name Generator" },
-            { to: "/features", name: "Class Features" },
+            { to: "/features", name: "Class Features Search" },
             { to: "/classes", name: "Class Search" },
             { to: "/character", name: "Quick NPC Creator" },
             { to: "/npc", name: "NPC Creator" },

@@ -24,7 +24,7 @@ import Encounter from "./pages/Encounter";
 import Environment from "./pages/Environment";
 import Food from "./pages/Food";
 import Hook from "./pages/Hook";
-import Long from "./pages/Long";
+import LongRest from "./pages/Long";
 import Magic from "./pages/Magic";
 import Rumors from "./pages/Rumors";
 import Loot from "./pages/Loot";
@@ -63,7 +63,7 @@ const App = () => (
       <Route path="/environment" component={Environment} />
       <Route path="/food" component={Food} />
       <Route path="/hook" component={Hook} />
-      <Route path="/long" component={Long} />
+      <Route path="/long" component={LongRest} />
       <Route path="/magic" component={Magic} />
       <Route path="/rumors" component={Rumors} />
       <Route path="/loot" component={Loot} />

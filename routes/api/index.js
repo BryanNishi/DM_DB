@@ -9,6 +9,9 @@ const cityRoutes = require("./city");
 const failRoutes = require("./fail");
 const trapRoutes = require("./trap");
 const chestRoutes = require("./chest");
+const encounterRoutes = require("./encounter");
+const longRestRoutes = require("./long");
+
 const userRoutes = require("./user");
 
 
@@ -32,6 +35,11 @@ router.use("/fail", failRoutes);
 router.use("/trap", trapRoutes);
 //Chest Route
 router.use("/chest", chestRoutes);
+//Encounter Route
+router.use("/encounter", encounterRoutes);
+//Long Rest Route
+router.use("/long", longRestRoutes);
+
 //User Route
 router.use("/user", userRoutes);
 

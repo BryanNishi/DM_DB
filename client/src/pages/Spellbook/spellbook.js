@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import NavBar from '../../components/NavBar';
 import Button from '../../components/Button';
-import "./spellbook.css";
 import API from '../../utils/API';
 import $ from 'jquery';
+import "./spellbook.css";
 
 class Spell extends Component {
 

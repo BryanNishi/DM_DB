@@ -159,7 +159,7 @@ class DM extends Component {
                                     <Col>
                                         <center>
                                             <Button type="submit" onClick={this.addCharacter} name="Add Character" />
-                                            <Button type="submit" onClick={this.sortCharacter} name="Sort" />
+                                            <Button type="submit" onClick={this.sortCharacter} name="Sort *Coming Soon*" />
                                         </center>
                                     </Col>
                                 </Row>

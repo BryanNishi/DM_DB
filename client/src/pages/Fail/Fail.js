@@ -10,7 +10,7 @@ class Fail extends Component {
     state = {
         generate: {
             href: "/fail",
-            name: "Generate 5 Fails"
+            name: "Generate 5 Crit Fails"
         },
         dbNames: [],
         failNames: []
@@ -50,7 +50,7 @@ class Fail extends Component {
         return (
             <div className="failGenerator">
                 <NavBar />
-                <h1>Fail Name Generator</h1>
+                <h1>Crit Fail Generator</h1>
                 <List>
                     {this.state.failNames.map(fail => (
                         <ListItem key={fail}>

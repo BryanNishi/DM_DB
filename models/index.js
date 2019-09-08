@@ -9,5 +9,7 @@ module.exports = {
   Fail: require("./Fail"),
   Trap: require("./Trap"),
   Chest: require("./Chest"),
+  Encounter: require("./Encounter"),
+  LongRest: require("./LongRest"),
 
 };

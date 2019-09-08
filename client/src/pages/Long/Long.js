@@ -3,28 +3,28 @@ import API from "../../utils/API";
 import NavBar from '../../components/NavBar';
 import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
-import "./fail.css";
+import "./long.css";
 
 
-class Fail extends Component {
+class LongRest extends Component {
     state = {
         generate: {
-            href: "/fail",
-            name: "Generate 5 Fails"
+            href: "/long",
+            name: "Generate 5 Long Rest Encounters"
         },
-        dbNames: [],
-        failNames: []
+        dbLongRest: [],
+        longRest: []
     }
-    // When the component mounts retreive all fail arrays
+    // When the component mounts retreive all long arrays
     componentDidMount() {
-        this.loadFail();
+        this.loadLongRest();
     }
 
-    // Loads all fail arrays to states
-    loadFail = () => {
-        API.getFail()
+    // Loads all long arrays to states
+    loadLongRest = () => {
+        API.getLongRest()
             .then(response => {
-                this.setState({ dbNames: response.data[0].fail });
+                this.setState({ dbLongRest: response.data[0].longRest });
             })
             .catch(err => console.log(err));
     };
@@ -32,29 +32,29 @@ class Fail extends Component {
     generateHandler = (event) => {
         event.preventDefault();
         let generatedName = [];
-        //Generate 5 fail names
+        //Generate 5 long Rests
         let i = 0;
         for (i = 0; i < 5; i++) {
             //pull random name
-            let failName = this.state.dbNames[Math.floor(Math.random() * this.state.dbNames.length)];
+            let longRest = this.state.dbLongRest[Math.floor(Math.random() * this.state.dbLongRest.length)];
 
             //send to array
-            generatedName.push(failName);
+            generatedName.push(longRest);
             console.log("generated", generatedName);
-            //set state to array of fail names
-            this.setState({ failNames: generatedName })
+            //set state to array of long names
+            this.setState({ longRest: generatedName })
         };
     };
 
     render() {
         return (
-            <div className="failGenerator">
+            <div className="longGenerator">
                 <NavBar />
-                <h1>Fail Name Generator</h1>
+                <h1>Long Rest Generator</h1>
                 <List>
-                    {this.state.failNames.map(fail => (
-                        <ListItem key={fail}>
-                            {fail}
+                    {this.state.longRest.map(long => (
+                        <ListItem key={long}>
+                            {long}
                         </ListItem>
                     ))}
                 </List>
@@ -64,4 +64,4 @@ class Fail extends Component {
     }
 }
 
-export default Fail;
+export default LongRest;

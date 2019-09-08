@@ -63,7 +63,7 @@ export default {
   getHook: function () {
     return axios.get("/api/hook");
   },
-  getLong: function () {
+  getLongRest: function () {
     return axios.get("/api/long");
   },
   getLoot: function () {
@@ -78,6 +78,6 @@ export default {
   getChest: function () {
     return axios.get("/api/chest");
   },
-
+ 
 };
 
