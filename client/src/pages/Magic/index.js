@@ -1,1 +1,1 @@
-export { default } from "./Fail.js";
+export { default } from "./magic.js";

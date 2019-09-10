@@ -57,8 +57,8 @@ export default {
   getEnvironment: function () {
     return axios.get("/api/environment");
   },
-  getFood: function () {
-    return axios.get("/api/food");
+  getMinor: function () {
+    return axios.get("/api/minor");
   },
   getHook: function () {
     return axios.get("/api/hook");
@@ -69,7 +69,7 @@ export default {
   getLoot: function () {
     return axios.get("/api/loot");
   },
-  getMagic: function () {
+  getMagicItems: function () {
     return axios.get("/api/magic");
   },
   getRumors: function () {

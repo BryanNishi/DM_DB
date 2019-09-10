@@ -11,5 +11,7 @@ module.exports = {
   Chest: require("./Chest"),
   Encounter: require("./Encounter"),
   LongRest: require("./LongRest"),
+  MagicItem: require("./MagicItem"),
+  MinorItem: require("./MinorItem"),
 
 };

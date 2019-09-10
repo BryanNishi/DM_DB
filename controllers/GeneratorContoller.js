@@ -92,6 +92,22 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
+  //get all magic items
+  getMagicItems: function (req, res) {
+    db.MagicItem
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
+  //get all minor magic items
+  getMinorItems: function (req, res) {
+    db.MinorItem
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
   //get user data
   getUsers: function (req, res) {
     db.User

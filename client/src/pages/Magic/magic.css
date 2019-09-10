@@ -1,0 +1,28 @@
+.magicItemGenerator {
+    background-image: url("../../assets/images/gen_bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.magicItemGenerator form {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.magicItemGenerator .nameList {
+    text-align: center;
+}
+
+.magicItemGenerator .list-group {
+    margin: 0rem;
+}
+
+.magicItemGenerator .buttonList {
+    display: flex;
+    justify-content: center;
+}

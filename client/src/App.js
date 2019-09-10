@@ -22,7 +22,7 @@ import Chest from "./pages/Chest";
 import Combat from "./pages/Combat";
 import Encounter from "./pages/Encounter";
 import Environment from "./pages/Environment";
-import Food from "./pages/Food";
+import Minor from "./pages/Minor";
 import Hook from "./pages/Hook";
 import LongRest from "./pages/Long";
 import Magic from "./pages/Magic";
@@ -61,7 +61,7 @@ const App = () => (
       <Route path="/combat" component={Combat} />
       <Route path="/encounter" component={Encounter} />
       <Route path="/environment" component={Environment} />
-      <Route path="/food" component={Food} />
+      <Route path="/minor" component={Minor} />
       <Route path="/hook" component={Hook} />
       <Route path="/long" component={LongRest} />
       <Route path="/magic" component={Magic} />

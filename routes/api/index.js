@@ -11,6 +11,8 @@ const trapRoutes = require("./trap");
 const chestRoutes = require("./chest");
 const encounterRoutes = require("./encounter");
 const longRestRoutes = require("./long");
+const magicItemRoutes = require("./magic");
+const minorItemRoutes = require("./minor");
 
 const userRoutes = require("./user");
 
@@ -39,6 +41,10 @@ router.use("/chest", chestRoutes);
 router.use("/encounter", encounterRoutes);
 //Long Rest Route
 router.use("/long", longRestRoutes);
+//Magic Item Route
+router.use("/magic", magicItemRoutes);
+//Minor Magic Item Route
+router.use("/minor", minorItemRoutes);
 
 //User Route
 router.use("/user", userRoutes);
