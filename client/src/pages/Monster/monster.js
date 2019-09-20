@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NavBar from '../../components/NavBar';
 import Button from '../../components/Button';
+import GoogleAd from '../../components/GoogleAd';
 import API from '../../utils/API';
 import $ from 'jquery';
 import "./monster.css";
@@ -110,6 +111,7 @@ class Monster extends Component {
         return (
             <div className="monsterBody">
                 <NavBar />
+                <GoogleAd />
                 <h1>Monster Manual</h1>
                 <div className="d-flex justify-content-center">
                     <form>

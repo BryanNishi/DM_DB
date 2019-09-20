@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NavBar from '../../components/NavBar';
 import Button from '../../components/Button';
+import GoogleAd from '../../components/GoogleAd';
 import API from '../../utils/API';
 import $ from 'jquery';
 import "./spellbook.css";
@@ -112,6 +113,7 @@ class Spell extends Component {
         return (
             <div className="spellBody">
                 <NavBar />
+                <GoogleAd />
                 <h1>Spell Book</h1>
                 <div className=" d-flex justify-content-center">
                     <form>

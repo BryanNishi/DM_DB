@@ -1,7 +1,13 @@
 import React from "react";
 import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer'
+import GoogleAd from '../../components/GoogleAd';
 import "./about.css";
+
+const style = {
+    marginTop: '15px',
+    marginBottom: '20px'
+};
 
 const About = (props) => {
 
@@ -12,6 +18,7 @@ const About = (props) => {
         <div className="about">
             <NavBar />
             <div className="about-bg">
+                <GoogleAd />
                 <h1>Welcome to the Dungeon Master's Database</h1>
                 <ul className="feature-list">
                     <li>Run a game and track initative with the DM Screen</li>

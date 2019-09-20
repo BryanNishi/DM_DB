@@ -8,6 +8,8 @@ import Button from '../../components/Button';
 import HTML5Backend from 'react-dnd-html5-backend'
 import { DragDropContext } from 'react-dnd';
 import { ButtonToolbar, FormGroup, Input, Row, Col, Container } from 'reactstrap';
+import GoogleAd from '../../components/GoogleAd';
+
 const update = require('immutability-helper');
 
 class DM extends Component {
@@ -122,6 +124,7 @@ class DM extends Component {
         return (
             <div className="DM-Page">
                 <NavBar />
+                <GoogleAd />
                 <h1>DM Screen</h1>
 
                 <div className=" d-flex justify-content-center">
