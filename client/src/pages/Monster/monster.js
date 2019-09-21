@@ -193,6 +193,7 @@ class Monster extends Component {
                             </div>}
                     </div>
                 </div>
+                <GoogleAd />
             </div>
         );
     }

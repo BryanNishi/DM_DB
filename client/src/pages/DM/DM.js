@@ -183,6 +183,7 @@ class DM extends Component {
                         </div>
                     </div>
                 </div>
+                <GoogleAd />
                 <div className="col-sm-12">
                     <h2>Info Tables</h2>
                     <div className="dmScreen">
@@ -195,6 +196,7 @@ class DM extends Component {
                         <iframe src={DM_ShopPDF} width="1300" height="750" title="Shop Catalog" />
                     </div>
                 </div>
+                <GoogleAd />
             </div >
         );
     }

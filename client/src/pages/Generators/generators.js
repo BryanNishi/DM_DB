@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NavBar from '../../components/NavBar';
 import Button from "../../components/Button";
+import GoogleAd from '../../components/GoogleAd';
 import { Link } from 'react-router-dom';
 import "./generators.css";
 
@@ -79,6 +80,7 @@ class Generators extends Component {
         return (
             <div className="generator">
                 <NavBar />
+                <GoogleAd />
                 <h1>Random Generators</h1>
                 <div className="container">
                     <div className="nameButtons">

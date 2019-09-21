@@ -166,6 +166,7 @@ class Spell extends Component {
                         }
                     </div>
                 </div>
+                <GoogleAd />
             </div>
         );
     }
