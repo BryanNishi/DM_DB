@@ -20,7 +20,9 @@ app.use("/auth",routes);
 
 // Connect to the Mongo DB
 // If deployed, use the deployed database. Otherwise use the local DMDB database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/DMDB";
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/DMDB";
+// var MONGODB_URI = "mongodb://localhost:27017/DMDB" || "mongodb://localhost/DMDB";
+var MONGODB_URI = "mongodb+srv://dmdb:dmdbpass@dmdbcluster0-ctm2j.mongodb.net/DMDB?retryWrites=true&w=majority" || "mongodb://localhost/DMDB";
 
 mongoose.connect(MONGODB_URI);
 
@@ -28,7 +30,7 @@ mongoose.connect(MONGODB_URI);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
- console.log("Connected to Mongo DB!")
+ console.log("Connected to Mongo DB via " + MONGODB_URI)
 });
 
 

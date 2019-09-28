@@ -2,7 +2,7 @@
   "name": "mern",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://localhost:3001/",
+  "proxy": "http://mongodb+srv://dmdb:dmdbpass@dmdbcluster0-ctm2j.mongodb.net/test?retryWrites=true&w=majority",
   "dependencies": {
     "axios": "^0.18.1",
     "express": "^4.17.1",

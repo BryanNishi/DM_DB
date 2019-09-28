@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import NavBar from '../../components/NavBar';
-import { Row, Jumbotron, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Row, Form, FormGroup, Label, Input } from 'reactstrap';
 import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
 import "./style.css";

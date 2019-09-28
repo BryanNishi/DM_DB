@@ -1,9 +1,9 @@
 {
-  "main.css": "/static/css/main.e63d3673.chunk.css",
-  "main.js": "/static/js/main.f5491e20.chunk.js",
-  "main.js.map": "/static/js/main.f5491e20.chunk.js.map",
-  "static/js/1.cdd25224.chunk.js": "/static/js/1.cdd25224.chunk.js",
-  "static/js/1.cdd25224.chunk.js.map": "/static/js/1.cdd25224.chunk.js.map",
+  "main.css": "/static/css/main.e302da75.chunk.css",
+  "main.js": "/static/js/main.0247d0f4.chunk.js",
+  "main.js.map": "/static/js/main.0247d0f4.chunk.js.map",
+  "static/js/1.1f1dbdc1.chunk.js": "/static/js/1.1f1dbdc1.chunk.js",
+  "static/js/1.1f1dbdc1.chunk.js.map": "/static/js/1.1f1dbdc1.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
   "static/media/d20.png": "/static/media/d20.353f6620.png",
@@ -18,8 +18,8 @@
   "static/media/monster.css": "/static/media/Monster_BG.e8c31576.jpg",
   "static/media/spellbook.css": "/static/media/spellbook-bg.59bccd64.jpg",
   "static/media/classes.css": "/static/media/char_bg.d6a5cfd7.jpg",
-  "static/css/main.e63d3673.chunk.css.map": "/static/css/main.e63d3673.chunk.css.map",
+  "static/css/main.e302da75.chunk.css.map": "/static/css/main.e302da75.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.fcbf2cf94a185c174e88eb61a30d085e.js": "/precache-manifest.fcbf2cf94a185c174e88eb61a30d085e.js",
+  "precache-manifest.3f3db6c8dfcad72a96a12944fb4caed7.js": "/precache-manifest.3f3db6c8dfcad72a96a12944fb4caed7.js",
   "service-worker.js": "/service-worker.js"
 }

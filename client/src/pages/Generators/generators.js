@@ -101,10 +101,10 @@ class Generators extends Component {
                     </div>
                     <div className="miscButtons">
                         <h3>External Generator Links</h3>
-                        <a href="http://tools.goblinist.com/5enc" target="_blank" rel="noopener"><button>Encounter Generator</button></a>
-                        <a href="https://www.fantasynamegenerators.com/" target="_blank" rel="noopener"><button>Fantasy Name Generator</button></a>
-                        <a href="https://donjon.bin.sh/5e/magic/shop.html" target="_blank" rel="noopener"><button>Magic Shop Generator</button></a>
-                        <a href="https://www.reddit.com/r/d100/comments/73v0ym/index_of_d100_lists/" target="_blank" rel="noopener"><button>Reddit d100 Lists</button></a>
+                        <a href="http://tools.goblinist.com/5enc" target="_blank" rel="noopener noreferrer"><button>Encounter Generator</button></a>
+                        <a href="https://www.fantasynamegenerators.com/" target="_blank" rel="noopener noreferrer"><button>Fantasy Name Generator</button></a>
+                        <a href="https://donjon.bin.sh/5e/magic/shop.html" target="_blank" rel="noopener noreferrer"><button>Magic Shop Generator</button></a>
+                        <a href="https://www.reddit.com/r/d100/comments/73v0ym/index_of_d100_lists/" target="_blank" rel="noopener noreferrer"><button>Reddit d100 Lists</button></a>
                     </div>
                 </div>
             </div>

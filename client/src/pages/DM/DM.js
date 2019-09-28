@@ -7,7 +7,7 @@ import Card from '../../components/BattleOrder/Card';
 import Button from '../../components/Button';
 import HTML5Backend from 'react-dnd-html5-backend'
 import { DragDropContext } from 'react-dnd';
-import { ButtonToolbar, FormGroup, Input, Row, Col, Container } from 'reactstrap';
+import { FormGroup, Input, Row, Col, Container } from 'reactstrap';
 import GoogleAd from '../../components/GoogleAd';
 
 const update = require('immutability-helper');
