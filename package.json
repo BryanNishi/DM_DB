@@ -1,7 +1,10 @@
 {
   "name": "DMDB",
   "version": "1.5.0",
-  "description": "",
+  "description": "Dungeons and Dragons App to DM a session of DnD and create worlds to game in with random generators",
+  "engines": {
+    "node": "10.16.3"
+  },
   "main": "server.js",
   "homepage": "http://www.dmdb.bryannishi.com/",
   "scripts": {
