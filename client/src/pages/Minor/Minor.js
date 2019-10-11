@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+import axios from 'axios';
 import NavBar from '../../components/NavBar';
 import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
@@ -22,7 +22,7 @@ class Minor extends Component {
 
     // Loads all minor arrays to states
     loadMinor = () => {
-        API.getMinor()
+        axios.get('http://localhost:5000/api/minor')
             .then(response => {
                 this.setState({ dbItems: response.data[0].minorItem });
             })

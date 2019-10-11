@@ -4,11 +4,6 @@ export default {
   getMonster: function (monsters) {
     return axios.get("http://www.dnd5eapi.co/api/monsters/" + monsters);
   },
-
-  getNextPage: function(next){
-    return axios.get(next);
-  },
-
   getSpell: function (spells) {
     return axios.get("http://www.dnd5eapi.co/api/spells/" + spells);
   },
@@ -78,6 +73,6 @@ export default {
   getChest: function () {
     return axios.get("/api/chest");
   },
- 
+
 };
 

@@ -14,8 +14,6 @@ const longRestRoutes = require("./long");
 const magicItemRoutes = require("./magic");
 const minorItemRoutes = require("./minor");
 
-const userRoutes = require("./user");
-
 
 //Inn Route
 router.use("/inn", innRoutes);
@@ -45,9 +43,6 @@ router.use("/long", longRestRoutes);
 router.use("/magic", magicItemRoutes);
 //Minor Magic Item Route
 router.use("/minor", minorItemRoutes);
-
-//User Route
-router.use("/user", userRoutes);
 
 
 module.exports = router;

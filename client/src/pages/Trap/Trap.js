@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+import axios from 'axios';
 import NavBar from '../../components/NavBar';
 import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
@@ -25,7 +25,7 @@ class Trap extends Component {
 
     // Loads all trap arrays to states
     loadTrap = () => {
-        API.getTrap()
+        axios.get('http://localhost:5000/api/trap')
             .then(response => {
                 this.setState({ traps: response.data[0].traps });
                 this.setState({ tripped: response.data[0].tripped });

@@ -4,9 +4,18 @@ var Schema = mongoose.Schema;
 
 //Create new Schema
 var innSchema = new Schema({
-  adj: [String],
-  noun: [String],
-  type: [String],
+  adj: {
+    type: Array,
+    unique: true,
+  },
+  noun: {
+    type: Array,
+    unique: true,
+  },
+  type: {
+    type: Array,
+    unique: true,
+  },
 });
 
 // Creates model

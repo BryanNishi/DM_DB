@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+import axios from 'axios';
 import NavBar from '../../components/NavBar';
 import { Row, Form, FormGroup, Label, Input } from 'reactstrap';
 import { List, ListItem } from "../../components/List";
@@ -27,7 +27,7 @@ class Magic extends Component {
     }
 
     loadMagicItems = () => {
-        API.getMagicItems()
+        axios.get('http://localhost:5000/api/MagicItems')
             .then(response => {
                 this.setState({ items: response.data });
                 console.log("DB items", this.state.items);

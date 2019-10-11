@@ -6,7 +6,7 @@ const db = require("../models");
 // To SEED Local run '$ node seedDB.js' from the scripts folder containing the seed.js file.
 
 mongoose.connect(
-  process.env.MONGODB_URI ||
+  "mongodb+srv://dmdb_1:dmdbpass@dmdb-jgido.gcp.mongodb.net/dmdb?retryWrites=true&w=majority" ||
   "mongodb://localhost/DMDB"
 );
 

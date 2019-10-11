@@ -4,13 +4,34 @@ var Schema = mongoose.Schema;
 
 //Create new Schema
 var chestSchema = new Schema({
-  style: [String],
-  material: [String],
-  trim: [String],
-  decor: [String],
-  trap: [String],
-  lock: [String],
-  key: [String],
+  style: {
+    type: Array,
+    unique: true,
+  },
+  material: {
+    type: String,
+    unique: true,
+  },
+  trim: {
+    type: String,
+    unique: true,
+  },
+  decor: {
+    type: String,
+    unique: true,
+  },
+  trap: {
+    type: String,
+    unique: true,
+  },
+  lock: {
+    type: String,
+    unique: true,
+  },
+  key: {
+    type: String,
+    unique: true,
+  },
 });
 
 // Creates model

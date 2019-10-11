@@ -5,9 +5,9 @@ module.exports = {
   // Gets all Inn Names
   getInn: function (req, res) {
     db.Inn
-      .find(req.query)
+      .find()
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => res.status(400).json('Error: ' + err));
   },
   //get all land names
   getLand: function (req, res) {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+import axios from 'axios';
 import NavBar from '../../components/NavBar';
 import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
@@ -28,7 +28,7 @@ class Chest extends Component {
 
     // Loads all chest arrays to states
     loadChest = () => {
-        API.getChest()
+        axios.get('http://localhost:5000/api/chest')
             .then(response => {
                 this.setState({ style: response.data[0].style });
                 this.setState({ material: response.data[0].material });

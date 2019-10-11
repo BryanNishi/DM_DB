@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+import axios from 'axios';
 import NavBar from '../../components/NavBar';
 import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
@@ -22,7 +22,7 @@ class City extends Component {
 
     // Loads all city arrays to states
     loadCity = () => {
-        API.getCity()
+        axios.get('http://localhost:5000/api/city')
             .then(response => {
                 this.setState({ dbNames: response.data[0].city });
             })

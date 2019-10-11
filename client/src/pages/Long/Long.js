@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+import axios from 'axios';
 import NavBar from '../../components/NavBar';
 import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
@@ -22,7 +22,7 @@ class LongRest extends Component {
 
     // Loads all long arrays to states
     loadLongRest = () => {
-        API.getLongRest()
+        axios.get('http://localhost:5000/api/long')
             .then(response => {
                 this.setState({ dbLongRest: response.data[0].longRest });
             })

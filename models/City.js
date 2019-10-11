@@ -4,7 +4,11 @@ var Schema = mongoose.Schema;
 
 //Create new Schema
 var citySchema = new Schema({
-  name: [String]
+  city: {
+    type: Array,
+    required: true,
+    unique: true,
+  },
 });
 
 // Creates model

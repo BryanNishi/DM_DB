@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+import axios from 'axios';
 import NavBar from '../../components/NavBar';
 import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
@@ -25,7 +25,7 @@ class Inn extends Component {
 
     // Loads all inn arrays to states
     loadInn = () => {
-        API.getInn()
+        axios.get('http://localhost:5000/api/inn')
             .then(response => {
                 this.setState({ adjs: response.data[0].adj });
                 this.setState({ nouns: response.data[0].noun });

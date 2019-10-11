@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+import axios from 'axios';
 import NavBar from '../../components/NavBar';
 import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
@@ -24,7 +24,7 @@ class Land extends Component {
 
     // Loads all land arrays to states
     loadLand = () => {
-        API.getLand()
+        axios.get('http://localhost:5000/api/land')
             .then(response => {
                 console.log(response.data);
                 this.setState({ adjs: response.data[0].adj });
