@@ -40,7 +40,7 @@
     "immutability-helper": "^2.9.0",
     "jquery": "^3.4.1",
     "mongodb": "^3.1.10",
-    "mongoose": "^5.0.17",
+    "mongoose": "^5.7.5",
     "mongoose-data-seed": "^2.1.4",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
