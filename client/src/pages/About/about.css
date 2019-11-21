@@ -1,68 +1,67 @@
 @font-face {
-    font-family: moria;
-    src: url(../../assets/fonts/Moria.TTF);
+  font-family: moria;
+  src: url(../../assets/fonts/Moria.TTF);
 }
 
 @font-face {
-    font-family: magic;
-    src: url(../../assets/fonts/MagicMedieval.ttf);
+  font-family: magic;
+  src: url(../../assets/fonts/MagicMedieval.ttf);
 }
 
 @font-face {
-    font-family: chancery;
-    src: url(../../assets/fonts/Chancery.TTF);
+  font-family: chancery;
+  src: url(../../assets/fonts/Chancery.TTF);
 }
-
 
 .about {
-    background-image: url("../../assets/images/dm_bg.jpg");
-    background-size: cover;
-    height: 100%;
-    color: white;
+  background-image: url("../../assets/images/dm_bg.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
 }
 
 .about h1 {
-    font-family: moria;
-    font-size: 3rem;
-    margin-top: 2rem;
+  font-family: moria;
+  font-size: 3rem;
+  margin-top: 2rem;
 }
 
 .about-bg {
-    width: 75%;
-    background-color: rgba(100, 100, 100, 0.8);
-    text-align: center;
-    margin: auto;
+  width: 75%;
+  background-color: rgba(100, 100, 100, 0.8);
+  text-align: center;
+  margin: auto;
 }
 
 .feature-list {
-    font-family: magic;
-    text-shadow: 2px 2px black;
-    list-style: none;
-    font-size: 1.5rem;
+  font-family: magic;
+  text-shadow: 2px 2px black;
+  list-style: none;
+  font-size: 1.5rem;
 }
 
 p {
-    font-family: chacery;
+  font-family: chacery;
 }
 
 .about button[type="login"] {
-    display: flex;
-    margin: auto;
+  display: flex;
+  margin: auto;
 }
 
 .info {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .footer {
-    margin: 0;
-    width: 100%;
-    text-align: center;
-    background-image: linear-gradient(rgb(80, 80, 80), rgb(0, 0, 0));
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  background-image: linear-gradient(rgb(80, 80, 80), rgb(0, 0, 0));
 }
 
 .footer p {
-    font-size: 0.8rem;
-    width: 75%;
-    margin: auto;
+  font-size: 0.8rem;
+  width: 75%;
+  margin: auto;
 }

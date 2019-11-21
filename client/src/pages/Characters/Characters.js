@@ -9,13 +9,13 @@ class Characters extends Component {
 
     state = {
         generators: [
-            { to: "/advcharacter", name: "Character Creator" },
+            { to: "/advcharacter", name: "Character Creator*" },
             { to: "/name", name: "Name Generator" },
             { to: "/features", name: "Class Features Search" },
-            { to: "/classes", name: "Class Search" },
-            { to: "/character", name: "Quick NPC Creator" },
-            { to: "/npc", name: "NPC Creator" },
-            { to: "/npc", name: "Character Flaws" },
+            { to: "/classes", name: "Class Search*" },
+            { to: "/character", name: "Quick NPC Creator*" },
+            { to: "/npc", name: "NPC Creator*" },
+            { to: "/npc", name: "Character Flaws*" },
         ]
     }
 
@@ -36,6 +36,7 @@ class Characters extends Component {
             <div className="characters">
                 <NavBar />
                 <h1>Character Creation</h1>
+                <h3>* = features coming soon!</h3>
                 <div className="container">
                     {charButtons}
                 </div>

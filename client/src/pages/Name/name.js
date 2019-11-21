@@ -117,11 +117,11 @@ class Name extends Component {
         </Form>
         <Row className="buttonList">
           <Button
-            clicked={this.generateMaleHandler}
+            onClick={this.generateMaleHandler}
             name={this.state.generate.male}
           />
           <Button
-            clicked={this.generateFemaleHandler}
+            onClick={this.generateFemaleHandler}
             name={this.state.generate.female}
           />
         </Row>

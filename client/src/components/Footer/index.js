@@ -12,7 +12,7 @@ const footer = (props) => {
                     For more information about Wizards of the Coast or any of Wizards' trademarks or other intellectual property,
                     please visit their website at <span><a href="http://wizards.com">wizards.com</a></span>.
                     </p>
-            <h3>Built by: <a href="https://www.bryannishi.com" target="_blank" rel="noopener">Bryan Nishi</a> 2019</h3>
+            <h3>Built by: <a href="https://www.bryannishi.com" target="_blank" rel="noopener noreferrer">Bryan Nishi</a> 2019</h3>
         </footer>
     )
 }

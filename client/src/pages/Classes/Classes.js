@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NavBar from '../../components/NavBar';
+import Button from '../../components/Button';
 import "./classes.css";
 import API from '../../utils/API';
 import $ from 'jquery';
@@ -83,7 +84,7 @@ class Classes extends Component {
                                 {this.state.classList.map((classes, index) => <option key={index} value={classes} />)}
                             </datalist>
                             <center>
-                                <a className="btn create-btn" role="button" id="classesSubmit" onClick={this.submitSearch}>Search</a>
+                                <Button role="button" id="classesSubmit" onClick={this.submitSearch}>Search</Button>
                             </center>
                         </form>
                     </div>
