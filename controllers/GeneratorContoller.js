@@ -1,13 +1,20 @@
 const db = require("../models");
 
 
+// exports.getInn = (req,res, next) => {
+//   db.Inn
+//     .find()
+//     .then(dbModel => res.json(dbModel))
+//     .catch(err => res.status(400).json('Error: ' + err));
+// }
+
 module.exports = {
   // Gets all Inn Names
   getInn: function (req, res) {
     db.Inn
-      .find()
+      .find(req.query)
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(400).json('Error: ' + err));
+      .catch(err => res.status(422).json(err));
   },
   //get all land names
   getLand: function (req, res) {
@@ -108,18 +115,5 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
-  //get user data
-  getUsers: function (req, res) {
-    db.User
-      .find(req.query)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-
-  postUser: function (req, res) {
-    db.User.create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  }
-
+ 
 };

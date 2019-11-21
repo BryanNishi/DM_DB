@@ -4,14 +4,8 @@ var Schema = mongoose.Schema;
 
 //Create new Schema
 var landSchema = new Schema({
-  adj: {
-    type: Array,
-    unique: true,
-  },
-  noun: {
-    type: Array,
-    unique: true,
-  },
+  adj: [String],
+  noun: [String]
 });
 
 // Creates model

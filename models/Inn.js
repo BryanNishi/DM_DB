@@ -1,20 +1,23 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 //Create new Schema
 var innSchema = new Schema({
   adj: {
     type: Array,
     unique: true,
+    required: true
   },
   noun: {
     type: Array,
     unique: true,
+    required: true
   },
   type: {
     type: Array,
     unique: true,
+    required: true
   },
 });
 

@@ -5,6 +5,7 @@ import DicePanel from "../DicePanel"
 import D20 from "../../assets/images/d20.png";
 import './NavBar.css';
 
+
 class NavBar extends Component {
     componentDidMount() {
         $(".dicePanel").click(function () {
