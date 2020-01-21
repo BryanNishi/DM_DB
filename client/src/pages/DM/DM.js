@@ -23,17 +23,17 @@ class DM extends Component {
   };
 
   componentDidMount() {
-    // retrive notes
+    // retrieve notes
     const storedCampaignNotes = localStorage.getItem("Campaign Notes") || "";
     document.getElementById("campaignNotes").value = storedCampaignNotes;
 
     const storedDmNotes = localStorage.getItem("DM Notes") || "";
     document.getElementById("dmNotes").value = storedDmNotes;
 
-    // retreive character initative cards
-    const retrievedCard = localStorage.getItem("Cards") || "";
-    if (retrievedCard !== "") {
-      let newCharacter = JSON.parse(retrievedCard);
+    // retrieve character initative cards
+    const retrievedCards = localStorage.getItem("Cards") || "";
+    if (retrievedCards !== "") {
+      let newCharacter = JSON.parse(retrievedCards);
       this.setState({ cards: newCharacter });
     }
   }
@@ -123,9 +123,9 @@ class DM extends Component {
     );
   };
 
-  deleteHandler = event =>{
-    console.log('Delete Trigger')
-  }
+  deleteHandler = event => {
+    console.log("Delete Trigger");
+  };
 
   render() {
     return (
@@ -219,7 +219,7 @@ class DM extends Component {
             <iframe
               src={DM_ScreenPDF}
               width="1300"
-              height="750"
+              height="700"
               title="DM Screen"
             />
           </div>
@@ -230,7 +230,7 @@ class DM extends Component {
             <iframe
               src={DM_ShopPDF}
               width="1300"
-              height="750"
+              height="700"
               title="Shop Catalog"
             />
           </div>

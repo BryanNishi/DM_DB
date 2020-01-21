@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { findDOMNode } from "react-dom";
 import { DragSource, DropTarget } from "react-dnd";
@@ -7,9 +7,9 @@ import Button from "../../components/Button";
 import "./style.css";
 
 const style = {
-  border: "1px dashed gray",
+  border: "1px dashed black",
   padding: "0.5rem 1rem",
-  marginBottom: ".5rem",
+  margin: ".5rem",
   backgroundColor: "white",
   cursor: "move"
 };
@@ -69,7 +69,12 @@ const cardTarget = {
   }
 };
 
-class Card extends React.Component {
+class Card extends Component {
+  state = {
+    cardsCount: [],
+    cards: []
+  };
+
   static propTypes = {
     connectDragSource: PropTypes.func.isRequired,
     connectDropTarget: PropTypes.func.isRequired,
@@ -80,14 +85,19 @@ class Card extends React.Component {
     moveCard: PropTypes.func.isRequired
   };
 
-  //   deleteItem = id => {
-  //     console.log(id)
-  //     this.setState(prevState => {
-  //       return {
-  //         cards: prevState.cards.filter(cards => cards.id !== id)
-  //       }
-  //     })
-  // }
+  componentDidMount() {
+    const retrievedCards = localStorage.getItem("Cards") || "";
+    let newCards = JSON.parse(retrievedCards);
+    this.setState({ cards: newCards });
+  }
+
+  deleteHandler = event => {
+    console.log("Delete Trigger", this.props.index);
+    let indexedCard = this.props;
+    let newArray = this.state.cards;
+    newArray.splice(indexedCard, 1);
+    localStorage.setItem("Cards", JSON.stringify(newArray));
+  };
 
   render() {
     const {
@@ -118,8 +128,7 @@ class Card extends React.Component {
                 <b>AC: </b> <input className="ac" placeholder={ac} />{" "}
               </span>
               <span>
-                <b>HP: </b> <input className="hp" placeholder={hp} /> /{" "}
-                <input className="hp" placeholder={hp} />{" "}
+                <b>HP: </b> <input className="hp" placeholder={hp} /> / {hp}
               </span>
               <span>
                 <b>Intiative: </b>
@@ -129,7 +138,7 @@ class Card extends React.Component {
                 <b>Notes </b>
                 <input className="notes" placeholder="Notes" />{" "}
               </span>
-              <Button name="Delete" onClick={this.deleteHandler}/>
+              <Button name="Delete" onClick={this.deleteHandler} />
             </div>
           </div>
         )

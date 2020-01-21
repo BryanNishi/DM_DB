@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import { DragSource } from 'react-dnd';
+import React, { Component } from "react";
+import { DragSource } from "react-dnd";
 
 const itemSource = {
   beginDrag(props) {
-    console.log('dragging');
     return props.item;
   },
   endDrag(props, monitor, component) {
@@ -13,14 +12,14 @@ const itemSource = {
 
     return props.handleDrop(props.item.id);
   }
-}
+};
 
 function collect(connect, monitor) {
   return {
     connectDragSource: connect.dragSource(),
     connectDragPreview: connect.dragPreview(),
-    isDragging: monitor.isDragging(),
-  }
+    isDragging: monitor.isDragging()
+  };
 }
 
 class Item extends Component {
@@ -36,4 +35,4 @@ class Item extends Component {
   }
 }
 
-export default DragSource('item', itemSource, collect)(Item);
+export default DragSource("item", itemSource, collect)(Item);
