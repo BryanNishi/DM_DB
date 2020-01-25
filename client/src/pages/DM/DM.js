@@ -12,15 +12,18 @@ import "./DM.css";
 const update = require("immutability-helper");
 
 class DM extends Component {
-  state = {
-    cards: [],
-    name: "",
-    intiative: "",
-    ac: "",
-    hp: "",
-    dmNotes: "",
-    campaignNotes: ""
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      cards: [],
+      name: "",
+      intiative: "",
+      ac: "",
+      hp: "",
+      dmNotes: "",
+      campaignNotes: ""
+    };
+  }
 
   componentDidMount() {
     // retrieve notes
@@ -33,8 +36,8 @@ class DM extends Component {
     // retrieve character initative cards
     const retrievedCards = localStorage.getItem("Cards") || "";
     if (retrievedCards !== "") {
-      let newCharacter = JSON.parse(retrievedCards);
-      this.setState({ cards: newCharacter });
+      let storedCharCards = JSON.parse(retrievedCards);
+      this.setState({ cards: storedCharCards });
     }
   }
 
@@ -123,9 +126,12 @@ class DM extends Component {
     );
   };
 
-  deleteHandler = event => {
-    console.log("Delete Trigger");
-  };
+  deleteHandler(newCardArray) {
+    // console.log("Cards sent from parent ", this.state.cards);
+    console.log("new card array from child ", newCardArray);
+    // this.setState({ cards: newCardArray });
+    // localStorage.setItem("Cards", JSON.stringify(newCardArray));
+  }
 
   render() {
     return (
@@ -207,6 +213,8 @@ class DM extends Component {
                   hp={card.hp}
                   text={card.text}
                   moveCard={this.moveCard}
+                  cardInfo={this.deleteHandler.bind(this)}
+                  storedCardsToSend={this.state.cards}
                 />
               ))}
             </div>

@@ -70,10 +70,12 @@ const cardTarget = {
 };
 
 class Card extends Component {
-  state = {
-    cardsCount: [],
-    cards: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      cards: []
+    };
+  }
 
   static propTypes = {
     connectDragSource: PropTypes.func.isRequired,
@@ -85,19 +87,33 @@ class Card extends Component {
     moveCard: PropTypes.func.isRequired
   };
 
-  componentDidMount() {
-    const retrievedCards = localStorage.getItem("Cards") || "";
-    let newCards = JSON.parse(retrievedCards);
-    this.setState({ cards: newCards });
-  }
+  // componentDidMount() {
+  //   const retrievedCards = localStorage.getItem("Cards") || "";
+  //   let newCards = JSON.parse(retrievedCards);
+  //   this.setState({ cards: newCards });
+  // }
 
-  deleteHandler = event => {
-    console.log("Delete Trigger", this.props.index);
-    let indexedCard = this.props;
+  // deleteHandler = event => {
+  //   console.log("Delete Trigger", this.props.index);
+  //   let indexedCard = this.props;
+  //   let newArray = this.state.cards;
+  //   newArray.splice(indexedCard, 1);
+  //   localStorage.setItem("Cards", JSON.stringify(newArray));
+  // };
+
+  deleteCardHandler() {
+    this.props.cardInfo(this.state.cards);
+    let importedCards = this.props.storedCardsToSend;
+    this.setState({ cards: importedCards });
+    console.log("cards recieved from parent", importedCards);
+    let indexedCard = this.props.index;
+    console.log("index is... ", indexedCard);
     let newArray = this.state.cards;
     newArray.splice(indexedCard, 1);
-    localStorage.setItem("Cards", JSON.stringify(newArray));
-  };
+    console.log("new spliced array", newArray);
+    let newCardArray = JSON.stringify(newArray);
+    console.log("new array to send ", newCardArray);
+  }
 
   render() {
     const {
@@ -138,7 +154,11 @@ class Card extends Component {
                 <b>Notes </b>
                 <input className="notes" placeholder="Notes" />{" "}
               </span>
-              <Button name="Delete" onClick={this.deleteHandler} />
+              <Button
+                name="Delete"
+                onClick={this.deleteCardHandler.bind(this)}
+                deleteHandler={this.props.newCardArray}
+              />
             </div>
           </div>
         )

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NavBar from "../../components/NavBar";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
+import onePageAdvPDF from "../../assets/images/onePageAdventures.pdf";
 import "./generators.css";
 
 class Generators extends Component {
@@ -131,6 +132,17 @@ class Generators extends Component {
               <button>Reddit d100 Lists</button>
             </a>
           </div>
+          <div className="col-sm-12">
+          <h2>One Page Adventures</h2>
+          <div className="onePage">
+            <iframe
+              src={onePageAdvPDF}
+              width="1300"
+              height="750"
+              title="DM Screen"
+            />
+          </div>
+        </div>
         </div>
       </div>
     );
