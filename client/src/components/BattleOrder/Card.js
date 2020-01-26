@@ -101,19 +101,20 @@ class Card extends Component {
   //   localStorage.setItem("Cards", JSON.stringify(newArray));
   // };
 
-  deleteCardHandler() {
-    this.props.cardInfo(this.state.cards);
+  deleteCardHandler = () => {
     let importedCards = this.props.storedCardsToSend;
-    this.setState({ cards: importedCards });
-    console.log("cards recieved from parent", importedCards);
-    let indexedCard = this.props.index;
-    console.log("index is... ", indexedCard);
-    let newArray = this.state.cards;
-    newArray.splice(indexedCard, 1);
-    console.log("new spliced array", newArray);
-    let newCardArray = JSON.stringify(newArray);
-    console.log("new array to send ", newCardArray);
-  }
+    // console.log("cards recieved from parent", importedCards);
+    this.setState({ cards: importedCards }, () => {
+      //REMEMBER! setState is asychronus, use an arrow function as a callback
+      // console.log("cards state", this.state.cards);
+      let indexedCard = this.props.index;
+      // console.log("index is... ", indexedCard);
+      let newArray = this.state.cards;
+      newArray.splice(indexedCard, 1);
+      // console.log("new spliced array to send to parent", newArray);
+      this.props.deleteCallback(newArray);
+    });
+  };
 
   render() {
     const {

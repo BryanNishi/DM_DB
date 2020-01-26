@@ -126,12 +126,11 @@ class DM extends Component {
     );
   };
 
-  deleteHandler(newCardArray) {
-    // console.log("Cards sent from parent ", this.state.cards);
-    console.log("new card array from child ", newCardArray);
-    // this.setState({ cards: newCardArray });
-    // localStorage.setItem("Cards", JSON.stringify(newCardArray));
-  }
+  deleteHandler = newArray => {
+    // console.log("new card array from child ", newArray);
+    this.setState({ cards: newArray });
+    localStorage.setItem("Cards", JSON.stringify(newArray));
+  };
 
   render() {
     return (
@@ -213,7 +212,7 @@ class DM extends Component {
                   hp={card.hp}
                   text={card.text}
                   moveCard={this.moveCard}
-                  cardInfo={this.deleteHandler.bind(this)}
+                  deleteCallback={this.deleteHandler}
                   storedCardsToSend={this.state.cards}
                 />
               ))}
